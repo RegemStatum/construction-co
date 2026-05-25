@@ -31,55 +31,55 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "About",    href: "#about"    },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact",  href: "#contact"  },
+  { id: "about", href: "#about" },
+  { id: "services", href: "#services" },
+  { id: "projects", href: "#projects" },
+  { id: "contact", href: "#contact" },
 ] as const;
 
 export const STATS = [
-  { value: `${new Date().getFullYear() - SITE.founded}+`, label: "Years in Business" },
-  { value: "500+",  label: "Projects Completed"  },
-  { value: "98%",   label: "Client Satisfaction"  },
-  { value: "15+",   label: "Expert Craftsmen"     },
+  { value: `${new Date().getFullYear() - SITE.founded}+`, labelKey: "stats.years" },
+  { value: "500+", labelKey: "stats.projects" },
+  { value: "98%", labelKey: "stats.satisfaction" },
+  { value: "15+", labelKey: "stats.craftsmen" },
 ] as const;
 
 export const SERVICES = [
   {
-    id:          "home-renovation",
-    icon:        "home",
-    title:       "Home Renovation",
-    description: "Full-scale home transformations – from structural changes to finishing touches. We bring your vision to life on time and on budget.",
+    id: "home-renovation",
+    icon: "home",
+    titleKey: "services.homeRenovation.title",
+    descriptionKey: "services.homeRenovation.description",
   },
   {
-    id:          "kitchen-renovation",
-    icon:        "kitchen",
-    title:       "Kitchen Renovation",
-    description: "Custom cabinetry, countertops, island builds, and appliance integration. Kitchens that are as functional as they are beautiful.",
+    id: "kitchen-renovation",
+    icon: "kitchen",
+    titleKey: "services.kitchenRenovation.title",
+    descriptionKey: "services.kitchenRenovation.description",
   },
   {
-    id:          "bathroom-renovation",
-    icon:        "bath",
-    title:       "Bathroom Renovation",
-    description: "Spa-quality remodels featuring walk-in showers, soaking tubs, and premium tile work that stand the test of time.",
+    id: "bathroom-renovation",
+    icon: "bath",
+    titleKey: "services.bathroomRenovation.title",
+    descriptionKey: "services.bathroomRenovation.description",
   },
   {
-    id:          "interior-construction",
-    icon:        "interior",
-    title:       "Interior Construction",
-    description: "Framing, drywall, ceilings, custom built-ins, and open-plan conversions. The backbone behind every great interior.",
+    id: "interior-construction",
+    icon: "interior",
+    titleKey: "services.interiorConstruction.title",
+    descriptionKey: "services.interiorConstruction.description",
   },
   {
-    id:          "painting",
-    icon:        "paint",
-    title:       "Interior & Exterior Painting",
-    description: "Flawless prep, premium paints, and expert application for a finish that lasts. Residential and light commercial.",
+    id: "painting",
+    icon: "paint",
+    titleKey: "services.painting.title",
+    descriptionKey: "services.painting.description",
   },
   {
-    id:          "roofing",
-    icon:        "roof",
-    title:       "Roofing",
-    description: "Roof installation, repair, and replacement using top-grade materials. We protect what matters most – your home.",
+    id: "roofing",
+    icon: "roof",
+    titleKey: "services.roofing.title",
+    descriptionKey: "services.roofing.description",
   },
 ] as const;
 

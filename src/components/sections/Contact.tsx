@@ -1,4 +1,7 @@
 // src/components/sections/Contact.tsx
+"use client";
+
+import { useTranslation } from "react-i18next";
 import { SITE } from "@/lib/config";
 import ContactForm from "@/components/ui/ContactForm";
 
@@ -20,7 +23,7 @@ const INFO_ITEMS = [
         />
       </svg>
     ),
-    label: "Phone",
+    labelKey: "contact.phone",
     value: SITE.phone,
     href: `tel:${SITE.phone.replace(/\s/g, "")}`,
   },
@@ -50,7 +53,7 @@ const INFO_ITEMS = [
         />
       </svg>
     ),
-    label: "Email",
+    labelKey: "contact.email",
     value: SITE.email,
     href: `mailto:${SITE.email}`,
   },
@@ -71,7 +74,7 @@ const INFO_ITEMS = [
         <circle cx="11" cy="8" r="2" stroke="currentColor" strokeWidth="1.5" />
       </svg>
     ),
-    label: "Service Area",
+    labelKey: "contact.serviceArea",
     value: SITE.serviceArea,
     href: undefined,
   },
@@ -93,13 +96,15 @@ const INFO_ITEMS = [
         />
       </svg>
     ),
-    label: "Office Hours",
+    labelKey: "contact.officeHours",
     value: "Mon – Fri: 7 am – 6 pm\nSat: 8 am – 2 pm",
     href: undefined,
   },
 ] as const;
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
@@ -111,18 +116,17 @@ export default function Contact() {
         <div className="text-center mb-14">
           <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
-            Get In Touch
+            {t("contact.eyebrow")}
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
           </p>
           <h2
             id="contact-heading"
             className="font-display text-fluid-3xl font-black text-stone-900 uppercase accent-line accent-line-center"
           >
-            Start Your Project
+            {t("contact.headline")}
           </h2>
           <p className="mt-6 text-stone-500 text-fluid-base max-w-lg mx-auto">
-            Request your free, no-obligation estimate. We&apos;ll get back to
-            you within one business day.
+            {t("contact.description")}
           </p>
         </div>
 
@@ -130,8 +134,8 @@ export default function Contact() {
           {/* Info column (2 of 5) */}
           <aside className="lg:col-span-2" aria-label="Contact information">
             <dl className="flex flex-col gap-6">
-              {INFO_ITEMS.map(({ icon, label, value, href }) => (
-                <div key={label} className="flex gap-4 items-start">
+              {INFO_ITEMS.map(({ icon, labelKey, value, href }) => (
+                <div key={labelKey} className="flex gap-4 items-start">
                   <dt>
                     <span
                       className="mt-0.5 w-11 h-11 flex-shrink-0 bg-brand-50 border border-brand-200
@@ -139,11 +143,11 @@ export default function Contact() {
                     >
                       {icon}
                     </span>
-                    <span className="sr-only">{label}:</span>
+                    <span className="sr-only">{t(labelKey)}:</span>
                   </dt>
                   <dd>
                     <p className="font-body font-semibold text-stone-700 text-xs uppercase tracking-wider mb-0.5">
-                      {label}
+                      {t(labelKey)}
                     </p>
                     {href ? (
                       <a
@@ -165,7 +169,7 @@ export default function Contact() {
             {/* Address */}
             <div className="mt-8 p-5 bg-stone-50 rounded-sm border border-stone-200">
               <p className="font-body font-semibold text-stone-700 text-xs uppercase tracking-wider mb-2">
-                Office Address
+                {t("contact.officeAddress")}
               </p>
               <address className="not-italic font-body text-stone-600 text-sm leading-relaxed">
                 {SITE.address.street}

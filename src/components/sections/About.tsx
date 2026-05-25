@@ -1,5 +1,8 @@
 // src/components/sections/About.tsx
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import { SITE } from "@/lib/config";
 
 const TRUST_SIGNALS = [
@@ -27,8 +30,8 @@ const TRUST_SIGNALS = [
         />
       </svg>
     ),
-    title: "Licensed & Insured",
-    desc: "Fully licensed in Colorado and comprehensively insured so you&apos;re protected on every project.",
+    titleKey: "trustSignals.licensed",
+    descKey: "trustSignals.licensedDesc",
   },
   {
     icon: (
@@ -54,8 +57,8 @@ const TRUST_SIGNALS = [
         />
       </svg>
     ),
-    title: "On-Time Delivery",
-    desc: "We set realistic timelines and stick to them. Your schedule is as important to us as it is to you.",
+    titleKey: "trustSignals.onTime",
+    descKey: "trustSignals.onTimeDesc",
   },
   {
     icon: (
@@ -75,8 +78,8 @@ const TRUST_SIGNALS = [
         />
       </svg>
     ),
-    title: "Quality Guaranteed",
-    desc: "Every project backed by our craftsmanship warranty. We don&apos;t consider a job done until you&apos;re thrilled.",
+    titleKey: "trustSignals.quality",
+    descKey: "trustSignals.qualityDesc",
   },
   {
     icon: (
@@ -95,12 +98,14 @@ const TRUST_SIGNALS = [
         />
       </svg>
     ),
-    title: "5-Star Rated",
-    desc: "98% client satisfaction over 500+ completed projects. Our reputation is our greatest asset.",
+    titleKey: "trustSignals.rated",
+    descKey: "trustSignals.ratedDesc",
   },
 ] as const;
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="about"
@@ -114,29 +119,27 @@ export default function About() {
           <div>
             <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
               <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
-              About Us
+              {t("about.eyebrow")}
             </p>
             <h2
               id="about-heading"
               className="font-display text-fluid-3xl font-black text-stone-900 uppercase mb-6 accent-line"
             >
-              Family-Owned.
+              {t("about.headlineLine1")}
               <br />
-              <span className="text-brand-500">Denver Built.</span>
+              <span className="text-brand-500">{t("about.headlineAccent")}</span>
             </h2>
             <p className="text-stone-600 text-fluid-base mb-5 leading-relaxed">
-              Founded in {SITE.founded} by master craftsman Robert Vance,{" "}
-              {SITE.name} has grown from a two-man operation into one of
-              Denver&apos;s most trusted construction teams – all without losing
-              the personal touch that made us.
+              {t("about.paragraph1", {
+                year: SITE.founded,
+                siteName: SITE.name,
+              })}
             </p>
             <p className="text-stone-600 text-fluid-base mb-8 leading-relaxed">
-              We believe your home deserves the same care we&apos;d give our
-              own. That means skilled tradespeople, premium materials,
-              transparent communication, and zero shortcuts. Every single time.
+              {t("about.paragraph2")}
             </p>
             <a href="#contact" className="btn-primary">
-              Work With Us
+              {t("about.workWithUs")}
             </a>
           </div>
 
@@ -145,7 +148,7 @@ export default function About() {
             <div className="relative rounded-sm overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
-                alt="Ironclad Construction team working on a residential renovation project in Denver"
+                alt={t("about.eyebrow")}
                 fill
                 className="object-cover"
                 loading="lazy"
@@ -160,7 +163,7 @@ export default function About() {
                 {new Date().getFullYear() - SITE.founded}+
               </p>
               <p className="font-body text-xs uppercase tracking-wider text-brand-100 mt-1">
-                Years Experience
+                {t("about.workWithUs")}
               </p>
             </div>
           </div>
@@ -172,9 +175,9 @@ export default function About() {
           role="list"
           aria-label="Trust signals"
         >
-          {TRUST_SIGNALS.map(({ icon, title, desc }) => (
+          {TRUST_SIGNALS.map(({ icon, titleKey, descKey }) => (
             <div
-              key={title}
+              key={titleKey}
               role="listitem"
               className="group flex flex-col gap-4 p-6 rounded-sm border border-stone-100
                          bg-stone-50 hover:bg-white hover:border-brand-200 hover:shadow-card
@@ -185,10 +188,10 @@ export default function About() {
               </span>
               <div>
                 <h3 className="font-display text-lg font-bold text-stone-900 uppercase mb-2">
-                  {title}
+                  {t(titleKey)}
                 </h3>
                 <p className="font-body text-sm text-stone-600 leading-relaxed">
-                  {desc}
+                  {t(descKey)}
                 </p>
               </div>
             </div>

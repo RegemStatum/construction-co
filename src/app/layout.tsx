@@ -2,6 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SITE } from "@/lib/config";
+import I18nProvider from "@/app/I18nProvider";
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -103,7 +104,7 @@ const schemaMarkup = {
 /* ── Layout Component ──────────────────────────────────────────────────── */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="de" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
@@ -111,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-body antialiased">
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );

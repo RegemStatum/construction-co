@@ -1,5 +1,5 @@
 /* src/app/globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@300;400;500;600&family=Inter:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +8,7 @@
 /* ── CSS Custom Properties ───────────────────────────────────────────────── */
 :root {
   --font-display: "Barlow Condensed", Georgia, serif;
+  --font-display-cyrillic: "Inter", system-ui, sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
 
   --color-brand: #f28010;
@@ -52,6 +53,23 @@
     letter-spacing: -0.01em;
     line-height: 1.1;
     color: theme("colors.stone.900");
+  }
+
+  html[data-locale="ru"] h1,
+  html[data-locale="ru"] h2,
+  html[data-locale="ru"] h3,
+  html[data-locale="ru"] h4,
+  html[data-locale="ru"] h5,
+  html[data-locale="ru"] h6,
+  html[data-locale="uk"] h1,
+  html[data-locale="uk"] h2,
+  html[data-locale="uk"] h3,
+  html[data-locale="uk"] h4,
+  html[data-locale="uk"] h5,
+  html[data-locale="uk"] h6,
+  html[data-locale="ru"] .font-display,
+  html[data-locale="uk"] .font-display {
+    font-family: var(--font-display-cyrillic);
   }
 
   img {
@@ -139,6 +157,10 @@
            font-body text-base
            transition-colors duration-150
            focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500;
+  }
+
+  select option {
+    cursor: pointer;
   }
 
   .service-card {

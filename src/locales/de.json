@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "header": {
+    "quote": "Kostenloses Angebot",
+    "language": "Sprache"
+  },
+  "hero": {
+    "eyebrow": "Seit {{year}} · Denver, CO",
+    "headlineLine1": "Wir bauen die Zukunft,",
+    "headlineAccent": "Heute.",
+    "description": "{{siteName}} bietet erstklassige Bau- und Renovierungsdienstleistungen in {{serviceArea}}. Qualitätshandwerk. Pünktlich. Im Budget.",
+    "viewWork": "Unsere Arbeit ansehen"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "headlineLine1": "Familiengeführt.",
+    "headlineAccent": "Aus Denver.",
+    "paragraph1": "Gegründet im Jahr {{year}} von Meisterbauer Robert Vance, hat sich {{siteName}} von einem Zweimannbetrieb zu einem der vertrauenswürdigsten Bauteams in Denver entwickelt – ohne den persönlichen Service zu verlieren.",
+    "paragraph2": "Wir glauben, dass Ihr Zuhause die gleiche Sorgfalt verdient wie unseres. Das bedeutet qualifizierte Handwerker, hochwertige Materialien, transparente Kommunikation und keine Abkürzungen. Jedes Mal.",
+    "workWithUs": "Mit uns arbeiten"
+  },
+  "trustSignals": {
+    "licensed": "Lizenziert & Versichert",
+    "licensedDesc": "Vollständig in Colorado lizenziert und umfassend versichert, damit Sie bei jedem Projekt geschützt sind.",
+    "onTime": "Termingerechte Lieferung",
+    "onTimeDesc": "Wir setzen realistische Zeitpläne und halten uns daran. Ihr Zeitplan ist uns genauso wichtig wie Ihnen.",
+    "quality": "Qualität garantiert",
+    "qualityDesc": "Jedes Projekt wird von unserer Handwerksgarantie abgesichert. Für uns ist ein Auftrag erst fertig, wenn Sie begeistert sind.",
+    "rated": "5-Sterne Bewertung",
+    "ratedDesc": "98 % Kundenzufriedenheit bei über 500 abgeschlossenen Projekten. Unser Ruf ist unser größtes Kapital."
+  },
+  "servicesSection": {
+    "eyebrow": "Was wir tun",
+    "headline": "Unsere Leistungen",
+    "description": "Von der Auffrischung eines einzelnen Raums bis zur kompletten Haussanierung haben wir die Erfahrung und das Team, um hervorragende Ergebnisse zu liefern.",
+    "getQuote": "Angebot anfordern"
+  },
+  "services": {
+    "homeRenovation": {
+      "title": "Haussanierung",
+      "description": "Umfassende Sanierungen – von baulichen Änderungen bis zur Ausstattung. Wir setzen Ihre Vision termingerecht und im Budget um."
+    },
+    "kitchenRenovation": {
+      "title": "Küchensanierung",
+      "description": "Maßgeschneiderte Schränke, Arbeitsplatten, Kücheninseln und Geräteeinbau. Küchen, die funktional und schön zugleich sind."
+    },
+    "bathroomRenovation": {
+      "title": "Badsanierung",
+      "description": "Wellness-orientierte Umbauten mit begehbaren Duschen, Badewannen und hochwertiger Fliesenarbeit, die langfristig hält."
+    },
+    "interiorConstruction": {
+      "title": "Innenausbau",
+      "description": "Ständerwerk, Trockenbau, Decken, Einbauten und offene Grundrisse. Das Fundament für jedes großartige Interieur."
+    },
+    "painting": {
+      "title": "Innen- & Außenmalerei",
+      "description": "Sorgfältige Vorbereitung, hochwertige Farben und fachkundige Ausführung für ein dauerhaft hochwertiges Finish. Privat und gewerblich."
+    },
+    "roofing": {
+      "title": "Dacharbeiten",
+      "description": "Dachinstallation, Reparatur und Erneuerung mit erstklassigen Materialien. Wir schützen, was am wichtigsten ist – Ihr Zuhause."
+    }
+  },
+  "projects": {
+    "eyebrow": "Unsere Arbeit",
+    "headline": "Aktuelle Projekte",
+    "description": "Jedes Projekt ist eine Chance, unsere beste Arbeit zu zeigen. Hier ist eine Auswahl dessen, was wir gebaut haben.",
+    "cta": "Bereit, Ihr Projekt zu starten?",
+    "button": "Kostenloses Angebot anfordern"
+  },
+  "contact": {
+    "eyebrow": "Kontakt aufnehmen",
+    "headline": "Starten Sie Ihr Projekt",
+    "description": "Fordern Sie Ihren kostenlosen, unverbindlichen Kostenvoranschlag an. Wir melden uns innerhalb eines Werktages bei Ihnen.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "serviceArea": "Einsatzgebiet",
+    "officeHours": "Öffnungszeiten",
+    "officeAddress": "Büroadresse"
+  },
+  "form": {
+    "name": "Vollständiger Name",
+    "phone": "Telefonnummer",
+    "email": "E-Mail-Adresse",
+    "service": "Benötigte Leistung",
+    "servicePlaceholder": "Wählen Sie eine Leistung…",
+    "project": "Projektbeschreibung",
+    "projectPlaceholder": "Erzählen Sie uns von Ihrem Projekt – Umfang, Zeitplan, besondere Wünsche…",
+    "namePlaceholder": "Max Mustermann",
+    "phonePlaceholder": "+49 151 00000000",
+    "emailPlaceholder": "max@beispiel.de",
+    "otherService": "Andere / Noch nicht sicher",
+    "required": "*",
+    "sendMessage": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "successTitle": "Nachricht erhalten!",
+    "successText": "Danke für Ihre Anfrage. Wir melden uns innerhalb eines Werktages bei Ihnen.",
+    "sendAnother": "Eine weitere Nachricht senden",
+    "responseNote": "Wir antworten innerhalb eines Werktages. Kein Spam, versprochen.",
+    "submitError": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
+    "networkError": "Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
+  },
+  "footer": {
+    "navigate": "Navigation",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "brandDescription": "Professionelle Bau- und Renovierungsleistungen im Großraum Denver. Qualität, auf die Sie sich verlassen können.",
+    "copyright": "© {{year}} {{siteName}}. Alle Rechte vorbehalten.",
+    "locationNote": "{{city}}, {{state}} · Lizenziert & Versichert"
+  },
+  "site": {
+    "serviceArea": "Denver Metro, Aurora, Lakewood, Centennial und Umgebung"
+  }
+}

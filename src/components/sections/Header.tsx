@@ -2,7 +2,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { SITE, NAV_LINKS } from "@/lib/config";
+import { languageNames, supportedLocales } from "@/lib/i18n";
 
 export default function Header() {
   const [scrolled,     setScrolled]     = useState(false);
@@ -34,6 +36,26 @@ export default function Header() {
 
     return () => observers.forEach((o) => o.disconnect());
   }, []);
+
+  const { t, i18n } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "en");
+
+  useEffect(() => {
+    const handleLanguageChanged = (locale: string) => {
+      setCurrentLanguage(locale || "en");
+    };
+
+    i18n.on("languageChanged", handleLanguageChanged);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChanged);
+    };
+  }, [i18n]);
+
+  const changeLanguage = async (locale: string) => {
+    await i18n.changeLanguage(locale);
+    setCurrentLanguage(locale);
+    window.localStorage.setItem("locale", locale);
+  };
 
   const handleNavClick = () => setMobileOpen(false);
 
@@ -67,10 +89,10 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav
-          className="hidden md:flex items-center gap-1"
+          className="hidden md:flex items-center gap-3"
           aria-label="Main navigation"
         >
-          {NAV_LINKS.map(({ label, href }) => {
+          {NAV_LINKS.map(({ id, href }) => {
             const sectionId = href.replace("#", "");
             return (
               <a
@@ -83,15 +105,34 @@ export default function Header() {
                     : "text-stone-300 hover:text-white"
                   }`}
               >
-                {label}
+                {t(`nav.${id}`)}
               </a>
             );
           })}
+
+          <div className="relative">
+            <label htmlFor="language-select" className="sr-only">
+              {t("header.language")}
+            </label>
+            <select
+              id="language-select"
+              value={currentLanguage}
+              onChange={(event) => changeLanguage(event.target.value)}
+              className="rounded-sm border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-400 cursor-pointer"
+            >
+              {supportedLocales.map((locale) => (
+                <option key={locale} value={locale} className="cursor-pointer">
+                  {languageNames[locale]}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <a
             href="#contact"
-            className="ml-4 btn-primary !py-2.5 !px-5 !text-sm"
+            className="ml-3 btn-primary !py-2.5 !px-5 !text-sm"
           >
-            Get a Free Quote
+            {t("header.quote")}
           </a>
         </nav>
 
@@ -124,8 +165,8 @@ export default function Header() {
           className="md:hidden bg-stone-950/98 border-t border-stone-800"
           aria-label="Mobile navigation"
         >
-          <div className="container-site py-4 flex flex-col gap-1">
-            {NAV_LINKS.map(({ label, href }) => (
+          <div className="container-site py-4 flex flex-col gap-3">
+            {NAV_LINKS.map(({ id, href }) => (
               <a
                 key={href}
                 href={href}
@@ -133,15 +174,32 @@ export default function Header() {
                 className="px-4 py-3 text-stone-200 hover:text-white hover:bg-stone-800
                            font-body font-medium text-base rounded-sm transition-colors"
               >
-                {label}
+                {t(`nav.${id}`)}
               </a>
             ))}
+            <div className="px-4 py-3 bg-stone-900 rounded-sm border border-stone-800">
+              <label htmlFor="language-select-mobile" className="block text-xs text-stone-400 mb-2 uppercase tracking-[0.24em]">
+                {t("header.language")}
+              </label>
+              <select
+                id="language-select-mobile"
+                value={currentLanguage}
+                onChange={(event) => changeLanguage(event.target.value)}
+                className="w-full rounded-sm border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-400 cursor-pointer"
+              >
+                {supportedLocales.map((locale) => (
+                  <option key={locale} value={locale} className="cursor-pointer">
+                    {languageNames[locale]}
+                  </option>
+                ))}
+              </select>
+            </div>
             <a
               href="#contact"
               onClick={handleNavClick}
               className="btn-primary mt-2 justify-center"
             >
-              Get a Free Quote
+              {t("header.quote")}
             </a>
           </div>
         </nav>

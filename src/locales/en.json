@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "header": {
+    "quote": "Get a Free Quote",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "Since {{year}} · Denver, CO",
+    "headlineLine1": "Building Tomorrow,",
+    "headlineAccent": "Today.",
+    "description": "{{siteName}} delivers exceptional construction and renovation services across {{serviceArea}}. Quality craftsmanship. On time. On budget.",
+    "viewWork": "View Our Work"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "headlineLine1": "Family-Owned.",
+    "headlineAccent": "Denver Built.",
+    "paragraph1": "Founded in {{year}} by master craftsman Robert Vance, {{siteName}} has grown from a two-man operation into one of Denver's most trusted construction teams – all without losing the personal touch that made us.",
+    "paragraph2": "We believe your home deserves the same care we'd give our own. That means skilled tradespeople, premium materials, transparent communication, and zero shortcuts. Every single time.",
+    "workWithUs": "Work With Us"
+  },
+  "trustSignals": {
+    "licensed": "Licensed & Insured",
+    "licensedDesc": "Fully licensed in Colorado and comprehensively insured so you're protected on every project.",
+    "onTime": "On-Time Delivery",
+    "onTimeDesc": "We set realistic timelines and stick to them. Your schedule is as important to us as it is to you.",
+    "quality": "Quality Guaranteed",
+    "qualityDesc": "Every project backed by our craftsmanship warranty. We don't consider a job done until you're thrilled.",
+    "rated": "5-Star Rated",
+    "ratedDesc": "98% client satisfaction over 500+ completed projects. Our reputation is our greatest asset."
+  },
+  "servicesSection": {
+    "eyebrow": "What We Do",
+    "headline": "Our Services",
+    "description": "From a single room refresh to a complete home transformation, we have the expertise and crew to deliver outstanding results.",
+    "getQuote": "Get a Quote"
+  },
+  "services": {
+    "homeRenovation": {
+      "title": "Home Renovation",
+      "description": "Full-scale home transformations – from structural changes to finishing touches. We bring your vision to life on time and on budget."
+    },
+    "kitchenRenovation": {
+      "title": "Kitchen Renovation",
+      "description": "Custom cabinetry, countertops, island builds, and appliance integration. Kitchens that are as functional as they are beautiful."
+    },
+    "bathroomRenovation": {
+      "title": "Bathroom Renovation",
+      "description": "Spa-quality remodels featuring walk-in showers, soaking tubs, and premium tile work that stand the test of time."
+    },
+    "interiorConstruction": {
+      "title": "Interior Construction",
+      "description": "Framing, drywall, ceilings, custom built-ins, and open-plan conversions. The backbone behind every great interior."
+    },
+    "painting": {
+      "title": "Interior & Exterior Painting",
+      "description": "Flawless prep, premium paints, and expert application for a finish that lasts. Residential and light commercial."
+    },
+    "roofing": {
+      "title": "Roofing",
+      "description": "Roof installation, repair, and replacement using top-grade materials. We protect what matters most – your home."
+    }
+  },
+  "projects": {
+    "eyebrow": "Our Work",
+    "headline": "Recent Projects",
+    "description": "Every project is a chance to do our best work. Here’s a sample of what we’ve built.",
+    "cta": "Ready to start your project?",
+    "button": "Request a Free Estimate"
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "headline": "Start Your Project",
+    "description": "Request your free, no-obligation estimate. We'll get back to you within one business day.",
+    "phone": "Phone",
+    "email": "Email",
+    "serviceArea": "Service Area",
+    "officeHours": "Office Hours",
+    "officeAddress": "Office Address"
+  },
+  "form": {
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "service": "Service Needed",
+    "servicePlaceholder": "Select a service…",
+    "project": "Project Description",
+    "projectPlaceholder": "Tell us about your project – scope, timeline, any specifics…",
+    "namePlaceholder": "Jane Smith",
+    "phonePlaceholder": "(555) 000-0000",
+    "emailPlaceholder": "jane@example.com",
+    "otherService": "Other / Not Sure",
+    "required": "*",
+    "sendMessage": "Send Message",
+    "sending": "Sending…",
+    "successTitle": "Message Received!",
+    "successText": "Thanks for reaching out. We'll get back to you within one business day.",
+    "sendAnother": "Send another message",
+    "responseNote": "We'll respond within one business day. No spam, ever.",
+    "submitError": "Submission failed. Please try again or call us directly.",
+    "networkError": "Network error. Please check your connection and try again."
+  },
+  "footer": {
+    "navigate": "Navigate",
+    "services": "Services",
+    "contact": "Contact",
+    "brandDescription": "Professional construction and renovation services across the Denver Metro area. Quality work you can count on.",
+    "copyright": "© {{year}} {{siteName}}. All rights reserved.",
+    "locationNote": "{{city}}, {{state}} · Licensed & Insured"
+  },
+  "site": {
+    "serviceArea": "Denver Metro, Aurora, Lakewood, Centennial & surrounding areas"
+  }
+}

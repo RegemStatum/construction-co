@@ -2,11 +2,13 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { SITE } from "@/lib/config";
+import { useTranslation } from "react-i18next";
+import { SITE, SERVICES } from "@/lib/config";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -31,13 +33,12 @@ export default function ContactForm() {
       } else {
         const json = await res.json().catch(() => ({}));
         setErrorMsg(
-          json?.error ??
-            "Submission failed. Please try again or call us directly.",
+          json?.error ?? t("form.submitError"),
         );
         setState("error");
       }
     } catch {
-      setErrorMsg("Network error. Please check your connection and try again.");
+      setErrorMsg(t("form.networkError"));
       setState("error");
     }
   }
@@ -63,18 +64,17 @@ export default function ContactForm() {
           </svg>
         </span>
         <h3 className="font-display text-2xl font-bold text-stone-900 uppercase mb-2">
-          Message Received!
+          {t("form.successTitle")}
         </h3>
         <p className="text-stone-600 font-body text-base">
-          Thanks for reaching out. We&apos;ll get back to you within one
-          business day.
+          {t("form.successText")}
         </p>
         <button
           type="button"
           onClick={() => setState("idle")}
           className="mt-6 text-brand-600 font-semibold text-sm hover:text-brand-700 underline"
         >
-          Send another message
+          {t("form.sendAnother")}
         </button>
       </div>
     );
@@ -94,9 +94,8 @@ export default function ContactForm() {
             htmlFor="contact-name"
             className="block font-body font-medium text-stone-700 text-sm mb-1.5"
           >
-            Full Name{" "}
-            <span className="text-brand-500" aria-label="required">
-              *
+            {t("form.name")} {" "}
+            <span className="text-brand-500" aria-label={t("form.required")}>*
             </span>
           </label>
           <input
@@ -105,7 +104,7 @@ export default function ContactForm() {
             name="name"
             required
             autoComplete="name"
-            placeholder="Jane Smith"
+            placeholder={t("form.namePlaceholder")}
             className="form-input"
           />
         </div>
@@ -114,9 +113,8 @@ export default function ContactForm() {
             htmlFor="contact-phone"
             className="block font-body font-medium text-stone-700 text-sm mb-1.5"
           >
-            Phone Number{" "}
-            <span className="text-brand-500" aria-label="required">
-              *
+            {t("form.phone")} {" "}
+            <span className="text-brand-500" aria-label={t("form.required")}>*
             </span>
           </label>
           <input
@@ -125,7 +123,7 @@ export default function ContactForm() {
             name="phone"
             required
             autoComplete="tel"
-            placeholder="(555) 000-0000"
+            placeholder={t("form.phonePlaceholder")}
             className="form-input"
           />
         </div>
@@ -137,9 +135,8 @@ export default function ContactForm() {
           htmlFor="contact-email"
           className="block font-body font-medium text-stone-700 text-sm mb-1.5"
         >
-          Email Address{" "}
-          <span className="text-brand-500" aria-label="required">
-            *
+          {t("form.email")} {" "}
+          <span className="text-brand-500" aria-label={t("form.required")}>*
           </span>
         </label>
         <input
@@ -148,7 +145,7 @@ export default function ContactForm() {
           name="email"
           required
           autoComplete="email"
-          placeholder="jane@example.com"
+          placeholder={t("form.emailPlaceholder")}
           className="form-input"
         />
       </div>
@@ -159,7 +156,7 @@ export default function ContactForm() {
           htmlFor="contact-service"
           className="block font-body font-medium text-stone-700 text-sm mb-1.5"
         >
-          Service Needed
+          {t("form.service")}
         </label>
         <select
           id="contact-service"
@@ -168,15 +165,14 @@ export default function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>
-            Select a service…
+            {t("form.servicePlaceholder")}
           </option>
-          <option>Home Renovation</option>
-          <option>Kitchen Renovation</option>
-          <option>Bathroom Renovation</option>
-          <option>Interior Construction</option>
-          <option>Painting</option>
-          <option>Roofing</option>
-          <option>Other / Not Sure</option>
+          {SERVICES.map(({ id, titleKey }) => (
+            <option key={id} value={id}>
+              {t(titleKey)}
+            </option>
+          ))}
+          <option value="other">{t("form.otherService")}</option>
         </select>
       </div>
 
@@ -186,9 +182,8 @@ export default function ContactForm() {
           htmlFor="contact-message"
           className="block font-body font-medium text-stone-700 text-sm mb-1.5"
         >
-          Project Description{" "}
-          <span className="text-brand-500" aria-label="required">
-            *
+          {t("form.project")} {" "}
+          <span className="text-brand-500" aria-label={t("form.required")}>*
           </span>
         </label>
         <textarea
@@ -196,7 +191,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Tell us about your project – scope, timeline, any specifics…"
+          placeholder={t("form.projectPlaceholder")}
           className="form-input resize-none"
         />
       </div>
@@ -243,11 +238,11 @@ export default function ContactForm() {
                 strokeLinecap="round"
               />
             </svg>
-            Sending…
+            {t("form.sending")}
           </>
         ) : (
           <>
-            Send Message
+            {t("form.sendMessage")}
             <svg
               width="16"
               height="16"
@@ -268,7 +263,7 @@ export default function ContactForm() {
       </button>
 
       <p className="text-xs text-stone-400 font-body text-center">
-        We&apos;ll respond within one business day. No spam, ever.
+        {t("form.responseNote")}
       </p>
     </form>
   );

@@ -1,7 +1,11 @@
 // src/components/sections/Footer.tsx
+"use client";
+
+import { useTranslation } from "react-i18next";
 import { SITE, NAV_LINKS, SERVICES } from "@/lib/config";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -9,7 +13,9 @@ export default function Footer() {
       className="bg-stone-950 text-stone-400 font-body"
       aria-labelledby="footer-heading"
     >
-      <h2 id="footer-heading" className="sr-only">Footer</h2>
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
 
       {/* Main footer content */}
       <div className="container-site pt-16 pb-10">
@@ -24,8 +30,8 @@ export default function Footer() {
             >
               <span className="flex-shrink-0 w-9 h-9 bg-brand-500 flex items-center justify-center rounded-sm" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M2 18L10 4L18 18H2Z" fill="white" fillOpacity="0.95"/>
-                  <path d="M6 18V12H14V18" fill="white" fillOpacity="0.7"/>
+                  <path d="M2 18L10 4L18 18H2Z" fill="white" fillOpacity="0.95" />
+                  <path d="M6 18V12H14V18" fill="white" fillOpacity="0.7" />
                 </svg>
               </span>
               <span className="font-display text-xl font-bold text-white tracking-wide">
@@ -34,8 +40,7 @@ export default function Footer() {
             </a>
 
             <p className="text-stone-500 text-sm leading-relaxed mb-6 max-w-xs">
-              Professional construction and renovation services across the Denver Metro area.
-              Quality work you can count on.
+              {t("footer.brandDescription")}
             </p>
 
             {/* Social links */}
@@ -50,7 +55,7 @@ export default function Footer() {
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </a>
               )}
@@ -64,9 +69,9 @@ export default function Footer() {
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <circle cx="12" cy="12" r="4"/>
-                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                   </svg>
                 </a>
               )}
@@ -76,16 +81,16 @@ export default function Footer() {
           {/* Navigation */}
           <nav aria-label="Footer navigation">
             <h3 className="font-display text-base font-bold text-white uppercase tracking-wider mb-5">
-              Navigate
+              {t("footer.navigate")}
             </h3>
             <ul className="flex flex-col gap-3">
-              {NAV_LINKS.map(({ label, href }) => (
+              {NAV_LINKS.map(({ id, href }) => (
                 <li key={href}>
                   <a
                     href={href}
                     className="text-sm hover:text-brand-400 transition-colors"
                   >
-                    {label}
+                    {t(`nav.${id}`)}
                   </a>
                 </li>
               ))}
@@ -95,16 +100,16 @@ export default function Footer() {
           {/* Services */}
           <nav aria-label="Services navigation">
             <h3 className="font-display text-base font-bold text-white uppercase tracking-wider mb-5">
-              Services
+              {t("footer.services")}
             </h3>
             <ul className="flex flex-col gap-3">
-              {SERVICES.map(({ id, title }) => (
+              {SERVICES.map(({ id, titleKey }) => (
                 <li key={id}>
                   <a
                     href="#services"
                     className="text-sm hover:text-brand-400 transition-colors"
                   >
-                    {title}
+                    {t(titleKey)}
                   </a>
                 </li>
               ))}
@@ -114,11 +119,12 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-display text-base font-bold text-white uppercase tracking-wider mb-5">
-              Contact
+              {t("footer.contact")}
             </h3>
             <address className="not-italic flex flex-col gap-3 text-sm">
               <p>
-                {SITE.address.street}<br />
+                {SITE.address.street}
+                <br />
                 {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
               </p>
               <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="hover:text-brand-400 transition-colors">
@@ -134,10 +140,13 @@ export default function Footer() {
         {/* Divider + bottom bar */}
         <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-stone-600 text-center sm:text-left">
-            &copy; {year} {SITE.name}. All rights reserved.
+            {t("footer.copyright", { year, siteName: SITE.name })}
           </p>
           <p className="text-xs text-stone-700">
-            {SITE.address.city}, {SITE.address.state} &middot; Licensed & Insured
+            {t("footer.locationNote", {
+              city: SITE.address.city,
+              state: SITE.address.state,
+            })}
           </p>
         </div>
       </div>
