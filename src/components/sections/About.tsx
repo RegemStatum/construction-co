@@ -1,9 +1,7 @@
 // src/components/sections/About.tsx
 "use client";
 
-import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import { SITE } from "@/lib/config";
 
 const TRUST_SIGNALS = [
   {
@@ -113,60 +111,24 @@ export default function About() {
       aria-labelledby="about-heading"
     >
       <div className="container-site">
-        {/* Layout: text col + image col */}
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-          {/* Text */}
-          <div>
-            <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
-              <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
-              {t("about.eyebrow")}
-            </p>
-            <h2
-              id="about-heading"
-              className="font-display text-fluid-3xl font-black text-stone-900 uppercase mb-6 accent-line"
-            >
-              {t("about.headlineLine1")}
-              <br />
-              <span className="text-brand-500">{t("about.headlineAccent")}</span>
-            </h2>
-            <p className="text-stone-600 text-fluid-base mb-5 leading-relaxed">
-              {t("about.paragraph1", {
-                year: SITE.founded,
-                siteName: SITE.name,
-              })}
-            </p>
-            <p className="text-stone-600 text-fluid-base mb-8 leading-relaxed">
-              {t("about.paragraph2")}
-            </p>
-            <a href="#contact" className="btn-primary">
-              {t("about.workWithUs")}
-            </a>
-          </div>
-
-          {/* Image */}
-          <div className="relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl aspect-[4/3]">
-              <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
-                alt={t("about.eyebrow")}
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-            </div>
-            {/* Accent badge */}
-            <div
-              className="absolute -bottom-5 -left-5 bg-brand-500 text-white rounded-sm px-6 py-5 shadow-brand"
-              aria-label={`${new Date().getFullYear() - SITE.founded} years of experience`}
-            >
-              <p className="font-display text-4xl font-black leading-none">
-                {new Date().getFullYear() - SITE.founded}+
-              </p>
-              <p className="font-body text-xs uppercase tracking-wider text-brand-100 mt-1">
-                {t("about.workWithUs")}
-              </p>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
+            <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
+            {t("about.eyebrow")}
+            <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
+          </p>
+          <h2
+            id="about-heading"
+            className="font-display text-fluid-3xl font-black text-stone-900 uppercase mb-6 accent-line accent-line-center"
+          >
+            {t("about.headlineLine1")}
+            <br />
+            <span className="text-brand-500">{t("about.headlineAccent")}</span>
+          </h2>
+          <a href="#contact" className="btn-primary">
+            {t("about.workWithUs")}
+          </a>
         </div>
 
         {/* Trust signal cards */}

@@ -10,67 +10,65 @@
     "language": "Language"
   },
   "hero": {
-    "eyebrow": "Since {{year}} · Denver, CO",
-    "headlineLine1": "Building Tomorrow,",
-    "headlineAccent": "Today.",
-    "description": "{{siteName}} delivers exceptional construction and renovation services across {{serviceArea}}. Quality craftsmanship. On time. On budget.",
-    "viewWork": "View Our Work"
+    "eyebrow": "Munich, Germany",
+    "headlineLine1": "From the walls to the floors –",
+    "headlineAccent": "all under one roof.",
+    "description": "{{siteName}} handles drywall, flooring, tiling, parquet, plumbing, and electrical work across {{serviceArea}}. Clean work. On schedule. Fair pricing.",
+    "viewWork": "See Our Work"
   },
   "about": {
     "eyebrow": "About Us",
-    "headlineLine1": "Family-Owned.",
-    "headlineAccent": "Denver Built.",
-    "paragraph1": "Founded in {{year}} by master craftsman Robert Vance, {{siteName}} has grown from a two-man operation into one of Denver's most trusted construction teams – all without losing the personal touch that made us.",
-    "paragraph2": "We believe your home deserves the same care we'd give our own. That means skilled tradespeople, premium materials, transparent communication, and zero shortcuts. Every single time.",
+    "headlineLine1": "Craftsmanship",
+    "headlineAccent": "from Munich.",
     "workWithUs": "Work With Us"
   },
   "trustSignals": {
-    "licensed": "Licensed & Insured",
-    "licensedDesc": "Fully licensed in Colorado and comprehensively insured so you're protected on every project.",
+    "licensed": "Master Craftsman & Insured",
+    "licensedDesc": "Registered master craftsman business in Bavaria with comprehensive insurance on every project.",
     "onTime": "On-Time Delivery",
-    "onTimeDesc": "We set realistic timelines and stick to them. Your schedule is as important to us as it is to you.",
+    "onTimeDesc": "We plan realistically and stick to our timelines. Your schedule matters to us as much as it does to you.",
     "quality": "Quality Guaranteed",
-    "qualityDesc": "Every project backed by our craftsmanship warranty. We don't consider a job done until you're thrilled.",
+    "qualityDesc": "Every project backed by our workmanship warranty. A job isn't done until you're satisfied.",
     "rated": "5-Star Rated",
-    "ratedDesc": "98% client satisfaction over 500+ completed projects. Our reputation is our greatest asset."
+    "ratedDesc": "Trusted by clients across Munich – our reputation is our greatest asset."
   },
   "servicesSection": {
     "eyebrow": "What We Do",
     "headline": "Our Services",
-    "description": "From a single room refresh to a complete home transformation, we have the expertise and crew to deliver outstanding results.",
+    "description": "From drywall to electrical work, we cover the trades that matter for your home, with one dependable team.",
     "getQuote": "Get a Quote"
   },
   "services": {
-    "homeRenovation": {
-      "title": "Home Renovation",
-      "description": "Full-scale home transformations – from structural changes to finishing touches. We bring your vision to life on time and on budget."
+    "drywall": {
+      "title": "Drywall",
+      "description": "Framing, boarding, ceilings, and partition walls – precisely finished for a flawless transition into surface work."
     },
-    "kitchenRenovation": {
-      "title": "Kitchen Renovation",
-      "description": "Custom cabinetry, countertops, island builds, and appliance integration. Kitchens that are as functional as they are beautiful."
+    "flooring": {
+      "title": "Flooring",
+      "description": "Laminate, vinyl, and designer floor installation with clean subfloors and precise transitions – for homes and commercial spaces."
     },
-    "bathroomRenovation": {
-      "title": "Bathroom Renovation",
-      "description": "Spa-quality remodels featuring walk-in showers, soaking tubs, and premium tile work that stand the test of time."
+    "tiling": {
+      "title": "Tiling",
+      "description": "Floor and wall tiling for bathrooms, kitchens, and wellness areas – from waterproofing to grouting, all in one hand."
     },
-    "interiorConstruction": {
-      "title": "Interior Construction",
-      "description": "Framing, drywall, ceilings, custom built-ins, and open-plan conversions. The backbone behind every great interior."
+    "parquet": {
+      "title": "Parquet Flooring",
+      "description": "Classic herringbone, plank, or solid parquet – expertly laid, sanded, and sealed."
     },
-    "painting": {
-      "title": "Interior & Exterior Painting",
-      "description": "Flawless prep, premium paints, and expert application for a finish that lasts. Residential and light commercial."
+    "plumbing": {
+      "title": "Plumbing",
+      "description": "Bathroom and kitchen connections, pipework, and fixtures – reliably installed and repaired to current standards."
     },
-    "roofing": {
-      "title": "Roofing",
-      "description": "Roof installation, repair, and replacement using top-grade materials. We protect what matters most – your home."
+    "electrical": {
+      "title": "Electrical Work",
+      "description": "From sockets to fuse boxes – safe, code-compliant electrical work for new builds and renovations."
     }
   },
   "projects": {
     "eyebrow": "Our Work",
     "headline": "Recent Projects",
-    "description": "Every project is a chance to do our best work. Here’s a sample of what we’ve built.",
-    "cta": "Ready to start your project?",
+    "description": "Every project is a chance to show our craft. Here's a sample of our recent work across Munich.",
+    "cta": "Ready for your next project?",
     "button": "Request a Free Estimate"
   },
   "contact": {
@@ -92,10 +90,13 @@
     "project": "Project Description",
     "projectPlaceholder": "Tell us about your project – scope, timeline, any specifics…",
     "namePlaceholder": "Jane Smith",
-    "phonePlaceholder": "(555) 000-0000",
+    "phonePlaceholder": "+49 89 0000000",
     "emailPlaceholder": "jane@example.com",
     "otherService": "Other / Not Sure",
     "required": "*",
+    "errorRequired": "This field is required.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorPhone": "Please enter a valid phone number.",
     "sendMessage": "Send Message",
     "sending": "Sending…",
     "successTitle": "Message Received!",
@@ -109,11 +110,13 @@
     "navigate": "Navigate",
     "services": "Services",
     "contact": "Contact",
-    "brandDescription": "Professional construction and renovation services across the Denver Metro area. Quality work you can count on.",
+    "brandDescription": "Skilled trades for Munich and the surrounding area – drywall, flooring, tiling, parquet, plumbing, and electrical work, all in one hand.",
     "copyright": "© {{year}} {{siteName}}. All rights reserved.",
-    "locationNote": "{{city}}, {{state}} · Licensed & Insured"
+    "locationNote": "{{city}}, {{state}} · Master Craftsman & Insured",
+    "legalImpressum": "Legal Notice",
+    "legalDatenschutz": "Privacy Policy"
   },
   "site": {
-    "serviceArea": "Denver Metro, Aurora, Lakewood, Centennial & surrounding areas"
+    "serviceArea": "Munich and surrounding areas – Schwabing, Bogenhausen, Pasing, Sendling & more"
   }
 }

@@ -24,17 +24,18 @@ export default function Footer() {
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <a
-              href="#"
+              href="/"
               className="flex items-center gap-2.5 mb-5 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded-sm"
               aria-label={`${SITE.name} homepage`}
             >
-              <span className="flex-shrink-0 w-9 h-9 bg-brand-500 flex items-center justify-center rounded-sm" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M2 18L10 4L18 18H2Z" fill="white" fillOpacity="0.95" />
-                  <path d="M6 18V12H14V18" fill="white" fillOpacity="0.7" />
+              <span className="flex-shrink-0 w-9 h-9 text-brand-500 flex items-center justify-center" aria-hidden="true">
+                <svg width="36" height="36" viewBox="0 0 30 30" fill="none">
+                  <path d="M15 2L27 8.5V21.5L15 28L3 21.5V8.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                  <path d="M15 15V28M15 15L27 8.5M15 15L3 8.5" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                  <path d="M3 8.5L15 28" stroke="currentColor" strokeWidth="1.3" opacity="0.6" />
                 </svg>
               </span>
-              <span className="font-display text-xl font-bold text-white tracking-wide">
+              <span className="font-display logo-wordmark font-bold text-white uppercase tracking-wide leading-none">
                 {SITE.name}
               </span>
             </a>
@@ -50,7 +51,7 @@ export default function Footer() {
                   href={SITE.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook – Ironclad Construction"
+                  aria-label={`Facebook – ${SITE.name}`}
                   className="w-9 h-9 rounded-sm border border-stone-700 flex items-center justify-center
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
                 >
@@ -64,7 +65,7 @@ export default function Footer() {
                   href={SITE.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram – Ironclad Construction"
+                  aria-label={`Instagram – ${SITE.name}`}
                   className="w-9 h-9 rounded-sm border border-stone-700 flex items-center justify-center
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
                 >
@@ -142,6 +143,14 @@ export default function Footer() {
           <p className="text-xs text-stone-600 text-center sm:text-left">
             {t("footer.copyright", { year, siteName: SITE.name })}
           </p>
+          <nav aria-label="Legal" className="flex items-center gap-4 text-xs text-stone-500">
+            <a href="/impressum/" className="hover:text-brand-400 transition-colors">
+              {t("footer.legalImpressum")}
+            </a>
+            <a href="/datenschutz/" className="hover:text-brand-400 transition-colors">
+              {t("footer.legalDatenschutz")}
+            </a>
+          </nav>
           <p className="text-xs text-stone-700">
             {t("footer.locationNote", {
               city: SITE.address.city,

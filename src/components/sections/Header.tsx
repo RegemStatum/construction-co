@@ -4,9 +4,11 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { SITE, NAV_LINKS } from "@/lib/config";
-import { languageNames, supportedLocales } from "@/lib/i18n";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
-export default function Header() {
+type Props = { solid?: boolean };
+
+export default function Header({ solid = false }: Props) {
   const [scrolled,     setScrolled]     = useState(false);
   const [mobileOpen,   setMobileOpen]   = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -37,32 +39,14 @@ export default function Header() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  const { t, i18n } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "en");
-
-  useEffect(() => {
-    const handleLanguageChanged = (locale: string) => {
-      setCurrentLanguage(locale || "en");
-    };
-
-    i18n.on("languageChanged", handleLanguageChanged);
-    return () => {
-      i18n.off("languageChanged", handleLanguageChanged);
-    };
-  }, [i18n]);
-
-  const changeLanguage = async (locale: string) => {
-    await i18n.changeLanguage(locale);
-    setCurrentLanguage(locale);
-    window.localStorage.setItem("locale", locale);
-  };
+  const { t } = useTranslation();
 
   const handleNavClick = () => setMobileOpen(false);
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || solid || mobileOpen
           ? "bg-stone-950/95 backdrop-blur-sm shadow-lg py-3"
           : "bg-transparent py-5"
       }`}
@@ -71,18 +55,19 @@ export default function Header() {
       <div className="container-site flex items-center justify-between">
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 rounded-sm"
           aria-label={`${SITE.name} – go to homepage`}
         >
           {/* Icon mark */}
-          <span className="flex-shrink-0 w-9 h-9 bg-brand-500 flex items-center justify-center rounded-sm" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M2 18L10 4L18 18H2Z" fill="white" fillOpacity="0.95"/>
-              <path d="M6 18V12H14V18" fill="white" fillOpacity="0.7"/>
+          <span className="flex-shrink-0 w-9 h-9 text-brand-500 flex items-center justify-center" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 30 30" fill="none">
+              <path d="M15 2L27 8.5V21.5L15 28L3 21.5V8.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+              <path d="M15 15V28M15 15L27 8.5M15 15L3 8.5" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/>
+              <path d="M3 8.5L15 28" stroke="currentColor" strokeWidth="1.3" opacity="0.6"/>
             </svg>
           </span>
-          <span className="font-display text-xl font-bold text-white tracking-wide leading-none">
+          <span className="font-display logo-wordmark font-bold text-white uppercase tracking-wide leading-none">
             {SITE.name}
           </span>
         </a>
@@ -110,23 +95,7 @@ export default function Header() {
             );
           })}
 
-          <div className="relative">
-            <label htmlFor="language-select" className="sr-only">
-              {t("header.language")}
-            </label>
-            <select
-              id="language-select"
-              value={currentLanguage}
-              onChange={(event) => changeLanguage(event.target.value)}
-              className="rounded-sm border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-400 cursor-pointer"
-            >
-              {supportedLocales.map((locale) => (
-                <option key={locale} value={locale} className="cursor-pointer">
-                  {languageNames[locale]}
-                </option>
-              ))}
-            </select>
-          </div>
+          <LanguageSwitcher id="language-select" label={t("header.language")} />
 
           <a
             href="#contact"
@@ -162,7 +131,7 @@ export default function Header() {
       {mobileOpen && (
         <nav
           id="mobile-menu"
-          className="md:hidden bg-stone-950/98 border-t border-stone-800"
+          className="md:hidden mt-4 bg-stone-950/98 border-t border-stone-800"
           aria-label="Mobile navigation"
         >
           <div className="container-site py-4 flex flex-col gap-3">
@@ -178,21 +147,7 @@ export default function Header() {
               </a>
             ))}
             <div className="px-4 py-3 bg-stone-900 rounded-sm border border-stone-800">
-              <label htmlFor="language-select-mobile" className="block text-xs text-stone-400 mb-2 uppercase tracking-[0.24em]">
-                {t("header.language")}
-              </label>
-              <select
-                id="language-select-mobile"
-                value={currentLanguage}
-                onChange={(event) => changeLanguage(event.target.value)}
-                className="w-full rounded-sm border border-stone-700 bg-stone-950 px-3 py-2 text-sm text-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-400 cursor-pointer"
-              >
-                {supportedLocales.map((locale) => (
-                  <option key={locale} value={locale} className="cursor-pointer">
-                    {languageNames[locale]}
-                  </option>
-                ))}
-              </select>
+              <LanguageSwitcher id="language-select-mobile" label={t("header.language")} labelVisible fullWidth />
             </div>
             <a
               href="#contact"

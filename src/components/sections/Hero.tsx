@@ -2,20 +2,20 @@
 
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { SITE, STATS } from "@/lib/config";
+import { SITE } from "@/lib/config";
 
 const heroSlides = [
   {
-    url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=85&fit=crop&h=1080",
-    label: "Modern construction project",
+    url: "https://images.unsplash.com/photo-1733431772808-82d878e59000?w=1920&q=85&fit=crop&h=1080",
+    label: "Drywall installation and finishing",
   },
   {
-    url: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1920&q=85&fit=crop&h=1080",
-    label: "Skilled tradespeople on site",
+    url: "https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+    label: "Wood flooring installation",
   },
   {
-    url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=85&fit=crop&h=1080",
-    label: "Architectural detail and building work",
+    url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=85&fit=crop&h=1080",
+    label: "Completed bathroom remodel",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function Hero() {
         {/* Eyebrow */}
         <p className="inline-flex items-center gap-2.5 mb-6 text-brand-400 font-body font-semibold text-sm tracking-widest uppercase">
           <span className="w-8 h-px bg-brand-400" aria-hidden="true" />
-          {t("hero.eyebrow", { year: SITE.founded })}
+          {t("hero.eyebrow")}
         </p>
 
         {/* H1 – one per page */}
@@ -140,26 +140,6 @@ export default function Hero() {
             {t("hero.viewWork")}
           </a>
         </div>
-
-        {/* Stats bar */}
-        <dl
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-stone-700/50 rounded-sm overflow-hidden max-w-3xl border border-stone-700/50"
-          aria-label="Company statistics"
-        >
-          {STATS.map(({ value, labelKey }) => (
-            <div
-              key={labelKey}
-              className="bg-stone-950/70 backdrop-blur-sm px-6 py-5 text-center"
-            >
-              <dt className="font-display text-fluid-2xl font-black text-brand-400 leading-none mb-1">
-                {value}
-              </dt>
-              <dd className="font-body text-xs text-stone-400 uppercase tracking-wider">
-                {t(labelKey)}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
 
       {/* Scroll cue */}

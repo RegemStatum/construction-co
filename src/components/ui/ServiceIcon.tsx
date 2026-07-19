@@ -4,41 +4,43 @@
 type Props = { icon: string; className?: string };
 
 const icons: Record<string, React.ReactNode> = {
-  home: (
+  drywall: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" strokeLinejoin="round"/>
-      <polyline points="9 22 9 12 15 12 15 22" strokeLinejoin="round"/>
+      <rect x="3" y="4" width="18" height="16" rx="1" strokeLinejoin="round"/>
+      <path d="M9 4v16M15 4v16M3 10h6M15 10h6M3 16h6M15 16h6" strokeLinecap="round"/>
     </svg>
   ),
-  kitchen: (
+  flooring: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <rect x="2" y="3" width="20" height="18" rx="2" strokeLinejoin="round"/>
-      <path d="M2 9h20M9 21V9" strokeLinecap="round"/>
+      <rect x="2" y="4" width="20" height="16" rx="1" strokeLinejoin="round"/>
+      <path d="M2 9h20M2 14h20M8 4v5M14 9v5M8 14v6M14 4v5" strokeLinecap="round"/>
     </svg>
   ),
-  bath: (
+  tiling: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <path d="M4 12h16v4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-4z" strokeLinejoin="round"/>
-      <path d="M6 12V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1" strokeLinecap="round"/>
-      <path d="M4 20l-1 2M20 20l1 2" strokeLinecap="round"/>
+      <rect x="3" y="3" width="8" height="8" rx="0.5" strokeLinejoin="round"/>
+      <rect x="13" y="3" width="8" height="8" rx="0.5" strokeLinejoin="round"/>
+      <rect x="3" y="13" width="8" height="8" rx="0.5" strokeLinejoin="round"/>
+      <rect x="13" y="13" width="8" height="8" rx="0.5" strokeLinejoin="round"/>
     </svg>
   ),
-  interior: (
+  parquet: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx="2" strokeLinejoin="round"/>
-      <path d="M3 9h18M9 21V9" strokeLinecap="round"/>
+      <path d="M12 3l6 6-6 6-6-6z" strokeLinejoin="round"/>
+      <path d="M12 15l6 6-6-6-6 6" strokeLinejoin="round"/>
+      <path d="M2 9l4-4M22 9l-4-4M2 19l4-4M22 19l-4-4" strokeLinecap="round"/>
     </svg>
   ),
-  paint: (
+  plumbing: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <path d="M2 13.5A7.5 7.5 0 0 1 9.5 6H18l2 2-2 2H9.5A3.5 3.5 0 0 0 6 13.5v0A3.5 3.5 0 0 0 9.5 17H11" strokeLinecap="round"/>
-      <path d="M13 17c0 2.5 2 5 2 5s2-2.5 2-5a2 2 0 0 0-4 0z" strokeLinejoin="round"/>
+      <path d="M6 3v6a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V3" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M10 13v4M14 9h4a3 3 0 0 1 3 3v2M18 14v7" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M4 3h4M12 3h4" strokeLinecap="round"/>
     </svg>
   ),
-  roof: (
+  electrical: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
-      <path d="M3 12L12 3l9 9" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M5 10v9a1 1 0 0 0 1 1h4v-4h4v4h4a1 1 0 0 0 1-1v-9" strokeLinejoin="round"/>
+      <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" strokeLinejoin="round"/>
     </svg>
   ),
 };
@@ -46,7 +48,7 @@ const icons: Record<string, React.ReactNode> = {
 export default function ServiceIcon({ icon, className = "w-7 h-7" }: Props) {
   return (
     <span className={className} aria-hidden="true">
-      {icons[icon] ?? icons["home"]}
+      {icons[icon] ?? icons["drywall"]}
     </span>
   );
 }

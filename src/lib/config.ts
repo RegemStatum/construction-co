@@ -3,31 +3,27 @@
 // Edit these values to customise the website for your company.
 
 export const SITE = {
-  name:        "Ironclad Construction",
-  tagline:     "Building Tomorrow, Today.",
-  description: "Family-owned construction company serving the greater metro area since 2003. Specialising in home renovation, kitchen & bathroom remodels, roofing, and interior build-outs.",
-  url:         "https://ironclad-construction.com",
-  phone:       "+1 (555) 892-4100",
-  email:       "info@ironclad-construction.com",
+  name:        "Raum89",
+  tagline:     "Handwerk mit Präzision. Made in München.",
+  description: "Inhabergeführter Handwerksbetrieb aus München – Ihr Partner für Trockenbau, Boden- und Parkettverlegung, Fliesenarbeiten sowie Sanitär- und Elektroinstallationen seit 2011.",
+  url:         "https://raum89.de",
+  phone:       "+49 89 4520 1837",
+  email:       "info@raum89.de",
   address: {
-    street:  "420 Industrial Blvd",
-    city:    "Denver",
-    state:   "CO",
-    zip:     "80203",
-    country: "US",
+    street:  "Landsberger Straße 110",
+    city:    "München",
+    state:   "Bayern",
+    zip:     "80339",
+    country: "DE",
   },
-  serviceArea: "Denver Metro, Aurora, Lakewood, Centennial & surrounding areas",
-  founded:     2003,
+  serviceArea: "München und Umgebung – Schwabing, Bogenhausen, Pasing, Sendling u. v. m.",
+  founded:     2011,
 
   // Social – leave blank to hide icons
   social: {
-    facebook: "https://facebook.com/ironcladconstruction",
-    instagram: "https://instagram.com/ironcladconstruction",
+    facebook: "https://facebook.com/raum89",
+    instagram: "https://instagram.com/raum89",
   },
-
-  // Formspree endpoint – replace with your own form ID after sign-up
-  // https://formspree.io/f/<your-form-id>
-  formspreeEndpoint: "https://formspree.io/f/YOUR_FORM_ID",
 } as const;
 
 export const NAV_LINKS = [
@@ -46,73 +42,73 @@ export const STATS = [
 
 export const SERVICES = [
   {
-    id: "home-renovation",
-    icon: "home",
-    titleKey: "services.homeRenovation.title",
-    descriptionKey: "services.homeRenovation.description",
+    id: "drywall",
+    icon: "drywall",
+    titleKey: "services.drywall.title",
+    descriptionKey: "services.drywall.description",
   },
   {
-    id: "kitchen-renovation",
-    icon: "kitchen",
-    titleKey: "services.kitchenRenovation.title",
-    descriptionKey: "services.kitchenRenovation.description",
+    id: "flooring",
+    icon: "flooring",
+    titleKey: "services.flooring.title",
+    descriptionKey: "services.flooring.description",
   },
   {
-    id: "bathroom-renovation",
-    icon: "bath",
-    titleKey: "services.bathroomRenovation.title",
-    descriptionKey: "services.bathroomRenovation.description",
+    id: "tiling",
+    icon: "tiling",
+    titleKey: "services.tiling.title",
+    descriptionKey: "services.tiling.description",
   },
   {
-    id: "interior-construction",
-    icon: "interior",
-    titleKey: "services.interiorConstruction.title",
-    descriptionKey: "services.interiorConstruction.description",
+    id: "parquet",
+    icon: "parquet",
+    titleKey: "services.parquet.title",
+    descriptionKey: "services.parquet.description",
   },
   {
-    id: "painting",
-    icon: "paint",
-    titleKey: "services.painting.title",
-    descriptionKey: "services.painting.description",
+    id: "plumbing",
+    icon: "plumbing",
+    titleKey: "services.plumbing.title",
+    descriptionKey: "services.plumbing.description",
   },
   {
-    id: "roofing",
-    icon: "roof",
-    titleKey: "services.roofing.title",
-    descriptionKey: "services.roofing.description",
+    id: "electrical",
+    icon: "electrical",
+    titleKey: "services.electrical.title",
+    descriptionKey: "services.electrical.description",
   },
 ] as const;
 
-// Unsplash construction images (free to use)
+// Unsplash / Pexels job photos (free to use)
 export const GALLERY_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-    alt: "Modern home renovation exterior – Ironclad Construction project",
+    src: "https://images.unsplash.com/photo-1733431772808-82d878e59000?w=800&q=80",
+    alt: "Trockenbau und Wandverkleidung – Neubauprojekt in München",
     width: 800, height: 600,
   },
   {
-    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
-    alt: "Bright contemporary kitchen remodel with marble countertops",
+    src: "https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Bodenbelagsarbeiten – Verlegung von Laminatboden",
     width: 800, height: 600,
   },
   {
-    src: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
-    alt: "Luxury bathroom renovation with walk-in shower and heated floors",
+    src: "https://images.unsplash.com/photo-1625646333826-c30c4e4d73d2?w=800&q=80",
+    alt: "Fliesenarbeiten – Badsanierung mit hochwertigen Fliesen",
     width: 800, height: 600,
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    alt: "New residential construction framing and interior build-out",
+    src: "https://images.unsplash.com/photo-1761053133165-0f3acdaf1770?w=800&q=80",
+    alt: "Parkettverlegung im Fischgrätmuster",
     width: 800, height: 600,
   },
   {
-    src: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
-    alt: "Completed residential exterior painting and curb appeal upgrade",
+    src: "https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=800&q=80",
+    alt: "Sanitärinstallation – Anschluss und Reparatur",
     width: 800, height: 600,
   },
   {
     src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
-    alt: "Roof replacement project – new architectural shingles installation",
+    alt: "Elektroinstallation – fachgerechte Verkabelung",
     width: 800, height: 600,
   },
 ] as const;

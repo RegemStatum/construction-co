@@ -3,25 +3,65 @@
 
 import { useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { SITE, SERVICES } from "@/lib/config";
+import { SERVICES } from "@/lib/config";
+import { isValidEmail, isValidPhone } from "@/lib/validation";
 
 type FormState = "idle" | "submitting" | "success" | "error";
+type FieldErrors = Partial<Record<"name" | "phone" | "email" | "message", string>>;
 
 export default function ContactForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [state, setState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  function validate(data: FormData): FieldErrors {
+    const errors: FieldErrors = {};
+
+    const name = String(data.get("name") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    if (!name) errors.name = t("form.errorRequired");
+    if (!phone) errors.phone = t("form.errorRequired");
+    else if (!isValidPhone(phone)) errors.phone = t("form.errorPhone");
+    if (!email) errors.email = t("form.errorRequired");
+    else if (!isValidEmail(email)) errors.email = t("form.errorEmail");
+    if (!message) errors.message = t("form.errorRequired");
+
+    return errors;
+  }
+
+  function clearFieldError(field: keyof FieldErrors) {
+    setFieldErrors((current) => {
+      if (!current[field]) return current;
+      const next = { ...current };
+      delete next[field];
+      return next;
+    });
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setState("submitting");
-    setErrorMsg("");
 
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    const errors = validate(data);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      const firstField = Object.keys(errors)[0];
+      form.querySelector<HTMLElement>(`[name="${firstField}"]`)?.focus();
+      return;
+    }
+
+    setFieldErrors({});
+    setState("submitting");
+    setErrorMsg("");
+
     try {
-      const res = await fetch(SITE.formspreeEndpoint, {
+      const res = await fetch("/api/contact/", {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
@@ -80,6 +120,9 @@ export default function ContactForm() {
     );
   }
 
+  const inputClass = (field: keyof FieldErrors) =>
+    `form-input ${fieldErrors[field] ? "border-red-400 focus:border-red-500 focus:ring-red-500" : ""}`;
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -87,6 +130,20 @@ export default function ContactForm() {
       aria-label="Contact form"
       className="flex flex-col gap-5"
     >
+      <input type="hidden" name="locale" value={i18n.language} />
+
+      {/* Honeypot – hidden from real visitors, bots often fill every field */}
+      <div className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="contact-website">Website</label>
+        <input
+          id="contact-website"
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Name + Phone */}
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
@@ -102,11 +159,18 @@ export default function ContactForm() {
             id="contact-name"
             type="text"
             name="name"
-            required
             autoComplete="name"
             placeholder={t("form.namePlaceholder")}
-            className="form-input"
+            className={inputClass("name")}
+            aria-invalid={Boolean(fieldErrors.name)}
+            aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
+            onChange={() => clearFieldError("name")}
           />
+          {fieldErrors.name && (
+            <p id="contact-name-error" role="alert" className="mt-1.5 text-xs text-red-600">
+              {fieldErrors.name}
+            </p>
+          )}
         </div>
         <div>
           <label
@@ -121,11 +185,22 @@ export default function ContactForm() {
             id="contact-phone"
             type="tel"
             name="phone"
-            required
+            inputMode="tel"
             autoComplete="tel"
             placeholder={t("form.phonePlaceholder")}
-            className="form-input"
+            className={inputClass("phone")}
+            aria-invalid={Boolean(fieldErrors.phone)}
+            aria-describedby={fieldErrors.phone ? "contact-phone-error" : undefined}
+            onChange={() => clearFieldError("phone")}
+            onBlur={(e) => {
+              e.currentTarget.value = e.currentTarget.value.trim();
+            }}
           />
+          {fieldErrors.phone && (
+            <p id="contact-phone-error" role="alert" className="mt-1.5 text-xs text-red-600">
+              {fieldErrors.phone}
+            </p>
+          )}
         </div>
       </div>
 
@@ -143,11 +218,25 @@ export default function ContactForm() {
           id="contact-email"
           type="email"
           name="email"
-          required
+          inputMode="email"
           autoComplete="email"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
           placeholder={t("form.emailPlaceholder")}
-          className="form-input"
+          className={inputClass("email")}
+          aria-invalid={Boolean(fieldErrors.email)}
+          aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
+          onChange={() => clearFieldError("email")}
+          onBlur={(e) => {
+            e.currentTarget.value = e.currentTarget.value.trim().toLowerCase();
+          }}
         />
+        {fieldErrors.email && (
+          <p id="contact-email-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            {fieldErrors.email}
+          </p>
+        )}
       </div>
 
       {/* Service */}
@@ -189,11 +278,18 @@ export default function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
-          required
           rows={5}
           placeholder={t("form.projectPlaceholder")}
-          className="form-input resize-none"
+          className={`${inputClass("message")} resize-none`}
+          aria-invalid={Boolean(fieldErrors.message)}
+          aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
+          onChange={() => clearFieldError("message")}
         />
+        {fieldErrors.message && (
+          <p id="contact-message-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            {fieldErrors.message}
+          </p>
+        )}
       </div>
 
       {/* Error message */}

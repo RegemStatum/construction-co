@@ -10,68 +10,66 @@
     "language": "Sprache"
   },
   "hero": {
-    "eyebrow": "Seit {{year}} · Denver, CO",
-    "headlineLine1": "Wir bauen die Zukunft,",
-    "headlineAccent": "Heute.",
-    "description": "{{siteName}} bietet erstklassige Bau- und Renovierungsdienstleistungen in {{serviceArea}}. Qualitätshandwerk. Pünktlich. Im Budget.",
-    "viewWork": "Unsere Arbeit ansehen"
+    "eyebrow": "München",
+    "headlineLine1": "Von der Wand bis zum Boden –",
+    "headlineAccent": "alles aus einer Hand.",
+    "description": "{{siteName}} übernimmt Trockenbau, Boden- und Parkettverlegung, Fliesenarbeiten sowie Sanitär- und Elektroinstallationen in {{serviceArea}}. Saubere Arbeit. Termintreue. Faire Preise.",
+    "viewWork": "Unsere Projekte ansehen"
   },
   "about": {
     "eyebrow": "Über uns",
-    "headlineLine1": "Familiengeführt.",
-    "headlineAccent": "Aus Denver.",
-    "paragraph1": "Gegründet im Jahr {{year}} von Meisterbauer Robert Vance, hat sich {{siteName}} von einem Zweimannbetrieb zu einem der vertrauenswürdigsten Bauteams in Denver entwickelt – ohne den persönlichen Service zu verlieren.",
-    "paragraph2": "Wir glauben, dass Ihr Zuhause die gleiche Sorgfalt verdient wie unseres. Das bedeutet qualifizierte Handwerker, hochwertige Materialien, transparente Kommunikation und keine Abkürzungen. Jedes Mal.",
+    "headlineLine1": "Handwerk",
+    "headlineAccent": "aus München.",
     "workWithUs": "Mit uns arbeiten"
   },
   "trustSignals": {
-    "licensed": "Lizenziert & Versichert",
-    "licensedDesc": "Vollständig in Colorado lizenziert und umfassend versichert, damit Sie bei jedem Projekt geschützt sind.",
-    "onTime": "Termingerechte Lieferung",
-    "onTimeDesc": "Wir setzen realistische Zeitpläne und halten uns daran. Ihr Zeitplan ist uns genauso wichtig wie Ihnen.",
-    "quality": "Qualität garantiert",
-    "qualityDesc": "Jedes Projekt wird von unserer Handwerksgarantie abgesichert. Für uns ist ein Auftrag erst fertig, wenn Sie begeistert sind.",
-    "rated": "5-Sterne Bewertung",
-    "ratedDesc": "98 % Kundenzufriedenheit bei über 500 abgeschlossenen Projekten. Unser Ruf ist unser größtes Kapital."
+    "licensed": "Meisterbetrieb & Versichert",
+    "licensedDesc": "Eingetragener Meisterbetrieb in Bayern mit umfassendem Versicherungsschutz für jedes Projekt.",
+    "onTime": "Termintreue",
+    "onTimeDesc": "Wir planen realistisch und halten Termine ein. Ihr Zeitplan ist uns genauso wichtig wie Ihnen.",
+    "quality": "Geprüfte Qualität",
+    "qualityDesc": "Jedes Projekt mit Gewährleistung. Für uns ist ein Auftrag erst fertig, wenn Sie zufrieden sind.",
+    "rated": "5-Sterne bewertet",
+    "ratedDesc": "Zufriedene Kund:innen in ganz München – unser Ruf ist unser wichtigstes Kapital."
   },
   "servicesSection": {
     "eyebrow": "Was wir tun",
     "headline": "Unsere Leistungen",
-    "description": "Von der Auffrischung eines einzelnen Raums bis zur kompletten Haussanierung haben wir die Erfahrung und das Team, um hervorragende Ergebnisse zu liefern.",
+    "description": "Vom Trockenbau bis zur Elektroinstallation – wir decken die Gewerke ab, die für Ihr Zuhause zählen, mit einem eingespielten Team.",
     "getQuote": "Angebot anfordern"
   },
   "services": {
-    "homeRenovation": {
-      "title": "Haussanierung",
-      "description": "Umfassende Sanierungen – von baulichen Änderungen bis zur Ausstattung. Wir setzen Ihre Vision termingerecht und im Budget um."
+    "drywall": {
+      "title": "Trockenbau",
+      "description": "Ständerwerk, Beplankung, Decken und Raumtrennwände – präzise verarbeitet für einen makellosen Übergang zur Oberflächengestaltung."
     },
-    "kitchenRenovation": {
-      "title": "Küchensanierung",
-      "description": "Maßgeschneiderte Schränke, Arbeitsplatten, Kücheninseln und Geräteeinbau. Küchen, die funktional und schön zugleich sind."
+    "flooring": {
+      "title": "Bodenbelagsarbeiten",
+      "description": "Verlegung von Laminat, Vinyl und Designböden mit sauberem Untergrund und exakten Anschlüssen – für Wohn- und Gewerberäume."
     },
-    "bathroomRenovation": {
-      "title": "Badsanierung",
-      "description": "Wellness-orientierte Umbauten mit begehbaren Duschen, Badewannen und hochwertiger Fliesenarbeit, die langfristig hält."
+    "tiling": {
+      "title": "Fliesenarbeiten",
+      "description": "Boden- und Wandfliesen für Bad, Küche und Wellnessbereiche – von der Abdichtung bis zur Fuge alles aus einer Hand."
     },
-    "interiorConstruction": {
-      "title": "Innenausbau",
-      "description": "Ständerwerk, Trockenbau, Decken, Einbauten und offene Grundrisse. Das Fundament für jedes großartige Interieur."
+    "parquet": {
+      "title": "Parkettverlegung",
+      "description": "Klassisches Fischgrät, Landhausdiele oder Massivparkett – fachgerecht verlegt, geschliffen und versiegelt."
     },
-    "painting": {
-      "title": "Innen- & Außenmalerei",
-      "description": "Sorgfältige Vorbereitung, hochwertige Farben und fachkundige Ausführung für ein dauerhaft hochwertiges Finish. Privat und gewerblich."
+    "plumbing": {
+      "title": "Sanitärinstallation",
+      "description": "Bad- und Küchenanschlüsse, Rohrleitungen und Armaturen – zuverlässig installiert und repariert nach aktuellen Normen."
     },
-    "roofing": {
-      "title": "Dacharbeiten",
-      "description": "Dachinstallation, Reparatur und Erneuerung mit erstklassigen Materialien. Wir schützen, was am wichtigsten ist – Ihr Zuhause."
+    "electrical": {
+      "title": "Elektroinstallation",
+      "description": "Von der Steckdose bis zum Sicherungskasten – sichere, normgerechte Elektroarbeiten für Neubau und Sanierung."
     }
   },
   "projects": {
     "eyebrow": "Unsere Arbeit",
     "headline": "Aktuelle Projekte",
-    "description": "Jedes Projekt ist eine Chance, unsere beste Arbeit zu zeigen. Hier ist eine Auswahl dessen, was wir gebaut haben.",
-    "cta": "Bereit, Ihr Projekt zu starten?",
-    "button": "Kostenloses Angebot anfordern"
+    "description": "Jedes Projekt ist eine Chance, unser Handwerk zu zeigen. Hier eine Auswahl unserer letzten Arbeiten in München.",
+    "cta": "Bereit für Ihr nächstes Projekt?",
+    "button": "Kostenlosen Kostenvoranschlag anfordern"
   },
   "contact": {
     "eyebrow": "Kontakt aufnehmen",
@@ -92,10 +90,13 @@
     "project": "Projektbeschreibung",
     "projectPlaceholder": "Erzählen Sie uns von Ihrem Projekt – Umfang, Zeitplan, besondere Wünsche…",
     "namePlaceholder": "Max Mustermann",
-    "phonePlaceholder": "+49 151 00000000",
+    "phonePlaceholder": "+49 89 0000000",
     "emailPlaceholder": "max@beispiel.de",
     "otherService": "Andere / Noch nicht sicher",
     "required": "*",
+    "errorRequired": "Dieses Feld ist erforderlich.",
+    "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "errorPhone": "Bitte geben Sie eine gültige Telefonnummer ein.",
     "sendMessage": "Nachricht senden",
     "sending": "Wird gesendet…",
     "successTitle": "Nachricht erhalten!",
@@ -109,11 +110,13 @@
     "navigate": "Navigation",
     "services": "Leistungen",
     "contact": "Kontakt",
-    "brandDescription": "Professionelle Bau- und Renovierungsleistungen im Großraum Denver. Qualität, auf die Sie sich verlassen können.",
+    "brandDescription": "Handwerksleistungen für München und Umgebung – Trockenbau, Böden, Fliesen, Parkett, Sanitär und Elektro aus einer Hand.",
     "copyright": "© {{year}} {{siteName}}. Alle Rechte vorbehalten.",
-    "locationNote": "{{city}}, {{state}} · Lizenziert & Versichert"
+    "locationNote": "{{city}}, {{state}} · Meisterbetrieb & Versichert",
+    "legalImpressum": "Impressum",
+    "legalDatenschutz": "Datenschutz"
   },
   "site": {
-    "serviceArea": "Denver Metro, Aurora, Lakewood, Centennial und Umgebung"
+    "serviceArea": "München und Umgebung – Schwabing, Bogenhausen, Pasing, Sendling u. v. m."
   }
 }

@@ -89,6 +89,13 @@
     font-family: var(--font-body);
   }
 
+  /* Logo wordmark always uses Inter, regardless of locale, instead of
+     switching to Barlow Condensed for Latin-script languages. */
+  .logo-wordmark {
+    font-family: var(--font-display-cyrillic);
+    font-size: 1.25rem;
+  }
+
   /* Constrained content container */
   .container-site {
     width: 100%;
