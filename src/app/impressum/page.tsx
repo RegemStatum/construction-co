@@ -93,7 +93,7 @@ export default function ImpressumPage() {
                     href="https://www.gesetze-im-internet.de/hwo/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-600 hover:text-brand-700 underline"
+                    className="text-brand-700 hover:text-brand-800 underline"
                   >
                     gesetze-im-internet.de/hwo
                   </a>
@@ -122,7 +122,7 @@ export default function ImpressumPage() {
                     href="https://ec.europa.eu/consumers/odr/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-600 hover:text-brand-700 underline"
+                    className="text-brand-700 hover:text-brand-800 underline"
                   >
                     ec.europa.eu/consumers/odr
                   </a>

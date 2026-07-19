@@ -16,9 +16,9 @@ export default function Projects() {
     >
       <div className="container-site">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 md:gap-6 md:mb-12">
           <div>
-            <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
+            <p className="inline-flex items-center gap-2.5 mb-4 text-brand-700 font-body font-semibold text-sm tracking-widest uppercase">
               <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
               {t("projects.eyebrow")}
             </p>

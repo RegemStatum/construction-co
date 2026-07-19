@@ -1,7 +1,6 @@
 // src/app/page.tsx
 import Header  from "@/components/sections/Header";
 import Hero    from "@/components/sections/Hero";
-import About   from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
 import Contact  from "@/components/sections/Contact";
@@ -13,7 +12,6 @@ export default function Home() {
       <Header />
       <main id="main-content">
         <Hero />
-        <About />
         <Services />
         <Projects />
         <Contact />

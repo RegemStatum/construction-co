@@ -106,7 +106,7 @@
 
   /* Section vertical rhythm */
   .section-padding {
-    padding-block: clamp(4rem, 8vw, 7rem);
+    padding-block: clamp(2.5rem, 8vw, 7rem);
   }
 
   /* Brand underline accent */

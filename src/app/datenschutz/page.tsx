@@ -103,7 +103,7 @@ export default function DatenschutzPage() {
                     href="https://policies.google.com/privacy"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-600 hover:text-brand-700 underline"
+                    className="text-brand-700 hover:text-brand-800 underline"
                   >
                     policies.google.com/privacy
                   </a>
@@ -155,7 +155,7 @@ export default function DatenschutzPage() {
                   Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail an{" "}
                   <a
                     href={`mailto:${SITE.email}`}
-                    className="text-brand-600 hover:text-brand-700 underline"
+                    className="text-brand-700 hover:text-brand-800 underline"
                   >
                     {SITE.email}
                   </a>

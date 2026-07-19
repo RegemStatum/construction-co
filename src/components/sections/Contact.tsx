@@ -113,8 +113,8 @@ export default function Contact() {
     >
       <div className="container-site">
         {/* Header */}
-        <div className="text-center mb-14">
-          <p className="inline-flex items-center gap-2.5 mb-4 text-brand-600 font-body font-semibold text-sm tracking-widest uppercase">
+        <div className="text-center mb-8 md:mb-14">
+          <p className="inline-flex items-center gap-2.5 mb-4 text-brand-700 font-body font-semibold text-sm tracking-widest uppercase">
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
             {t("contact.eyebrow")}
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
@@ -130,7 +130,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-start">
           {/* Info column (2 of 5) */}
           <aside className="lg:col-span-2" aria-label="Contact information">
             <dl className="flex flex-col gap-6">
@@ -139,7 +139,7 @@ export default function Contact() {
                   <dt>
                     <span
                       className="mt-0.5 w-11 h-11 flex-shrink-0 bg-brand-50 border border-brand-200
-                                 rounded-sm flex items-center justify-center text-brand-600"
+                                 rounded-sm flex items-center justify-center text-brand-700"
                     >
                       {icon}
                     </span>
@@ -152,7 +152,7 @@ export default function Contact() {
                     {href ? (
                       <a
                         href={href}
-                        className="font-body text-stone-600 hover:text-brand-600 transition-colors text-base"
+                        className="font-body text-stone-600 hover:text-brand-700 transition-colors text-base"
                       >
                         {value}
                       </a>
@@ -180,7 +180,7 @@ export default function Contact() {
           </aside>
 
           {/* Form column (3 of 5) */}
-          <div className="lg:col-span-3 bg-stone-50 rounded-sm border border-stone-200 p-8">
+          <div className="lg:col-span-3 bg-stone-50 rounded-sm border border-stone-200 p-5 sm:p-6 md:p-8">
             <ContactForm />
           </div>
         </div>

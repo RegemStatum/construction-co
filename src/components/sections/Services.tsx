@@ -11,24 +11,24 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="section-padding bg-stone-950"
+      className="section-padding bg-white"
       aria-labelledby="services-heading"
     >
       <div className="container-site">
         {/* Section header */}
-        <div className="text-center mb-14">
-          <p className="inline-flex items-center gap-2.5 mb-4 text-brand-400 font-body font-semibold text-sm tracking-widest uppercase">
+        <div className="text-center mb-8 md:mb-14">
+          <p className="inline-flex items-center gap-2.5 mb-4 text-brand-700 font-body font-semibold text-sm tracking-widest uppercase">
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
             {t("servicesSection.eyebrow")}
             <span className="w-8 h-px bg-brand-500" aria-hidden="true" />
           </p>
           <h2
             id="services-heading"
-            className="font-display text-fluid-3xl font-black text-white uppercase accent-line accent-line-center"
+            className="font-display text-fluid-3xl font-black text-stone-900 uppercase accent-line accent-line-center"
           >
             {t("servicesSection.headline")}
           </h2>
-          <p className="mt-6 text-stone-400 text-fluid-base max-w-xl mx-auto">
+          <p className="mt-6 text-stone-500 text-fluid-base max-w-xl mx-auto">
             {t("servicesSection.description")}
           </p>
         </div>
@@ -40,11 +40,11 @@ export default function Services() {
         >
           {SERVICES.map(({ id, icon, titleKey, descriptionKey }) => (
             <li key={id}>
-              <article className="service-card h-full bg-stone-900 border-stone-800 hover:border-brand-700">
+              <article className="service-card group h-full hover:border-brand-200">
                 {/* Icon */}
                 <div
                   className="w-14 h-14 rounded-sm bg-brand-500/10 border border-brand-500/20
-                              flex items-center justify-center text-brand-400 mb-5
+                              flex items-center justify-center text-brand-600 mb-5
                               group-hover:bg-brand-500 group-hover:text-white group-hover:border-brand-500
                               transition-all duration-300"
                   aria-hidden="true"
@@ -53,18 +53,18 @@ export default function Services() {
                 </div>
 
                 {/* Text */}
-                <h3 className="font-display text-xl font-bold text-white uppercase mb-3">
+                <h3 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
                   {t(titleKey)}
                 </h3>
-                <p className="font-body text-sm text-stone-400 leading-relaxed">
+                <p className="font-body text-sm text-stone-600 leading-relaxed">
                   {t(descriptionKey)}
                 </p>
 
                 {/* CTA hint */}
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-1.5 mt-5 text-brand-400 text-sm font-semibold
-                             hover:text-brand-300 transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 mt-5 text-brand-700 text-sm font-semibold
+                             hover:text-brand-800 transition-colors group/link"
                   aria-label={t("servicesSection.getQuote")}
                 >
                   {t("servicesSection.getQuote")}

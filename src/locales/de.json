@@ -1,6 +1,5 @@
 {
   "nav": {
-    "about": "Über uns",
     "services": "Leistungen",
     "projects": "Projekte",
     "contact": "Kontakt"
@@ -14,23 +13,8 @@
     "headlineLine1": "Von der Wand bis zum Boden –",
     "headlineAccent": "alles aus einer Hand.",
     "description": "{{siteName}} übernimmt Trockenbau, Boden- und Parkettverlegung, Fliesenarbeiten sowie Sanitär- und Elektroinstallationen in {{serviceArea}}. Saubere Arbeit. Termintreue. Faire Preise.",
+    "descriptionShort": "{{siteName}} übernimmt Trockenbau, Böden, Fliesen und mehr in München – saubere Arbeit, faire Preise.",
     "viewWork": "Unsere Projekte ansehen"
-  },
-  "about": {
-    "eyebrow": "Über uns",
-    "headlineLine1": "Handwerk",
-    "headlineAccent": "aus München.",
-    "workWithUs": "Mit uns arbeiten"
-  },
-  "trustSignals": {
-    "licensed": "Meisterbetrieb & Versichert",
-    "licensedDesc": "Eingetragener Meisterbetrieb in Bayern mit umfassendem Versicherungsschutz für jedes Projekt.",
-    "onTime": "Termintreue",
-    "onTimeDesc": "Wir planen realistisch und halten Termine ein. Ihr Zeitplan ist uns genauso wichtig wie Ihnen.",
-    "quality": "Geprüfte Qualität",
-    "qualityDesc": "Jedes Projekt mit Gewährleistung. Für uns ist ein Auftrag erst fertig, wenn Sie zufrieden sind.",
-    "rated": "5-Sterne bewertet",
-    "ratedDesc": "Zufriedene Kund:innen in ganz München – unser Ruf ist unser wichtigstes Kapital."
   },
   "servicesSection": {
     "eyebrow": "Was wir tun",

@@ -87,7 +87,7 @@ export default function ContactForm() {
     return (
       <div
         role="alert"
-        className="flex flex-col items-center justify-center text-center py-16 px-8 rounded-sm bg-brand-50 border border-brand-200"
+        className="flex flex-col items-center justify-center text-center py-10 px-5 sm:py-16 sm:px-8 rounded-sm bg-brand-50 border border-brand-200"
       >
         <span
           className="w-16 h-16 rounded-full bg-brand-100 flex items-center justify-center mb-5"
@@ -96,7 +96,7 @@ export default function ContactForm() {
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
             <path
               d="M6 14l6 6 10-10"
-              stroke="#f28010"
+              stroke="#b9430a"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -112,7 +112,7 @@ export default function ContactForm() {
         <button
           type="button"
           onClick={() => setState("idle")}
-          className="mt-6 text-brand-600 font-semibold text-sm hover:text-brand-700 underline"
+          className="mt-6 text-brand-700 font-semibold text-sm hover:text-brand-800 underline"
         >
           {t("form.sendAnother")}
         </button>
@@ -128,7 +128,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       noValidate
       aria-label="Contact form"
-      className="flex flex-col gap-5"
+      className="flex flex-col gap-4 sm:gap-5"
     >
       <input type="hidden" name="locale" value={i18n.language} />
 
@@ -145,14 +145,14 @@ export default function ContactForm() {
       </div>
 
       {/* Name + Phone */}
-      <div className="grid sm:grid-cols-2 gap-5">
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
         <div>
           <label
             htmlFor="contact-name"
             className="block font-body font-medium text-stone-700 text-sm mb-1.5"
           >
             {t("form.name")} {" "}
-            <span className="text-brand-500" aria-label={t("form.required")}>*
+            <span className="text-brand-700" aria-label={t("form.required")}>*
             </span>
           </label>
           <input
@@ -178,7 +178,7 @@ export default function ContactForm() {
             className="block font-body font-medium text-stone-700 text-sm mb-1.5"
           >
             {t("form.phone")} {" "}
-            <span className="text-brand-500" aria-label={t("form.required")}>*
+            <span className="text-brand-700" aria-label={t("form.required")}>*
             </span>
           </label>
           <input

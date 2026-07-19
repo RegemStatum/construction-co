@@ -42,7 +42,7 @@ export default function Hero() {
     <section
       id="hero"
       aria-label="Hero – welcome to Ironclad Construction"
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden"
+      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-end overflow-hidden"
     >
       {/* Background image */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
@@ -71,7 +71,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="absolute left-1/2 bottom-5 z-20 flex items-center gap-2 rounded-full bg-black/30 px-2 py-1 shadow-lg backdrop-blur-sm -translate-x-1/2">
+      <div className="hidden sm:flex absolute left-1/2 bottom-5 z-20 items-center gap-2 rounded-full bg-black/30 px-2 py-1 shadow-lg backdrop-blur-sm -translate-x-1/2">
         <button
           type="button"
           onClick={() => handleSlideChange(-1)}
@@ -96,21 +96,24 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container-site pb-20 pt-40 md:pt-52">
+      <div className="container-site pb-12 pt-28 md:pb-20 md:pt-52">
         {/* Eyebrow */}
-        <p className="inline-flex items-center gap-2.5 mb-6 text-brand-400 font-body font-semibold text-sm tracking-widest uppercase">
+        <p className="inline-flex items-center gap-2.5 mb-4 md:mb-6 text-brand-400 font-body font-semibold text-sm tracking-widest uppercase">
           <span className="w-8 h-px bg-brand-400" aria-hidden="true" />
           {t("hero.eyebrow")}
         </p>
 
         {/* H1 – one per page */}
-        <h1 className="font-display text-fluid-4xl font-black text-white uppercase leading-none max-w-3xl mb-6">
+        <h1 className="font-display text-fluid-4xl font-black text-white uppercase leading-none max-w-3xl mb-4 md:mb-6">
           {t("hero.headlineLine1")}
           <br />
           <span className="text-brand-400">{t("hero.headlineAccent")}</span>
         </h1>
 
-        <p className="font-body text-fluid-lg text-stone-300 max-w-xl leading-relaxed mb-10">
+        <p className="md:hidden font-body text-fluid-lg text-stone-300 max-w-xl leading-relaxed mb-6">
+          {t("hero.descriptionShort", { siteName: SITE.name })}
+        </p>
+        <p className="hidden md:block font-body text-fluid-lg text-stone-300 max-w-xl leading-relaxed mb-10">
           {t("hero.description", {
             siteName: SITE.name,
             serviceArea: t("site.serviceArea"),

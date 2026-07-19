@@ -1,6 +1,5 @@
 {
   "nav": {
-    "about": "About",
     "services": "Services",
     "projects": "Projects",
     "contact": "Contact"
@@ -14,23 +13,8 @@
     "headlineLine1": "From the walls to the floors –",
     "headlineAccent": "all under one roof.",
     "description": "{{siteName}} handles drywall, flooring, tiling, parquet, plumbing, and electrical work across {{serviceArea}}. Clean work. On schedule. Fair pricing.",
+    "descriptionShort": "{{siteName}} handles drywall, flooring, tiling, and more across Munich – clean work, fair pricing.",
     "viewWork": "See Our Work"
-  },
-  "about": {
-    "eyebrow": "About Us",
-    "headlineLine1": "Craftsmanship",
-    "headlineAccent": "from Munich.",
-    "workWithUs": "Work With Us"
-  },
-  "trustSignals": {
-    "licensed": "Master Craftsman & Insured",
-    "licensedDesc": "Registered master craftsman business in Bavaria with comprehensive insurance on every project.",
-    "onTime": "On-Time Delivery",
-    "onTimeDesc": "We plan realistically and stick to our timelines. Your schedule matters to us as much as it does to you.",
-    "quality": "Quality Guaranteed",
-    "qualityDesc": "Every project backed by our workmanship warranty. A job isn't done until you're satisfied.",
-    "rated": "5-Star Rated",
-    "ratedDesc": "Trusted by clients across Munich – our reputation is our greatest asset."
   },
   "servicesSection": {
     "eyebrow": "What We Do",

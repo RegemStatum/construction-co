@@ -18,8 +18,8 @@ export default function Footer() {
       </h2>
 
       {/* Main footer content */}
-      <div className="container-site pt-16 pb-10">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div className="container-site pt-10 pb-8 md:pt-16 md:pb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:gap-10 md:mb-12">
 
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
@@ -140,7 +140,7 @@ export default function Footer() {
 
         {/* Divider + bottom bar */}
         <div className="pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-stone-600 text-center sm:text-left">
+          <p className="text-xs text-stone-500 text-center sm:text-left">
             {t("footer.copyright", { year, siteName: SITE.name })}
           </p>
           <nav aria-label="Legal" className="flex items-center gap-4 text-xs text-stone-500">
@@ -151,7 +151,7 @@ export default function Footer() {
               {t("footer.legalDatenschutz")}
             </a>
           </nav>
-          <p className="text-xs text-stone-700">
+          <p className="text-xs text-stone-500">
             {t("footer.locationNote", {
               city: SITE.address.city,
               state: SITE.address.state,
