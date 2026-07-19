@@ -96,7 +96,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="container-site pb-12 pt-28 md:pb-20 md:pt-52">
+      <div className="container-site pb-12 pt-28 md:pb-20 md:pt-44">
         {/* Eyebrow */}
         <p className="inline-flex items-center gap-2.5 mb-4 md:mb-6 text-brand-400 font-body font-semibold text-sm tracking-widest uppercase">
           <span className="w-8 h-px bg-brand-400" aria-hidden="true" />
