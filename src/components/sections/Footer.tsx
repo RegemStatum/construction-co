@@ -47,10 +47,8 @@ export default function Footer() {
             {/* Social links */}
             <div className="flex gap-3" aria-label="Social media">
               {SITE.social.facebook && (
-                <a
-                  href={SITE.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   aria-label={`Facebook – ${SITE.name}`}
                   className="w-9 h-9 rounded-sm border border-stone-700 flex items-center justify-center
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
@@ -58,13 +56,11 @@ export default function Footer() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
-                </a>
+                </button>
               )}
               {SITE.social.instagram && (
-                <a
-                  href={SITE.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   aria-label={`Instagram – ${SITE.name}`}
                   className="w-9 h-9 rounded-sm border border-stone-700 flex items-center justify-center
                              text-stone-500 hover:text-white hover:border-stone-500 transition-colors"
@@ -74,7 +70,7 @@ export default function Footer() {
                     <circle cx="12" cy="12" r="4" />
                     <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
                   </svg>
-                </a>
+                </button>
               )}
             </div>
           </div>

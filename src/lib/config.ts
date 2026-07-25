@@ -7,13 +7,13 @@ export const SITE = {
   tagline:     "Handwerk mit Präzision. Made in München.",
   description: "Inhabergeführter Handwerksbetrieb aus München – Ihr Partner für Trockenbau, Boden- und Parkettverlegung, Fliesenarbeiten sowie Sanitär- und Elektroinstallationen seit 2011.",
   url:         "https://raum89.de",
-  phone:       "+49 89 4520 1837",
+  phone:       "+49 170 6690835",
   email:       "info@raum89.de",
   address: {
-    street:  "Landsberger Straße 110",
+    street:  "Alzeyer 5",
     city:    "München",
     state:   "Bayern",
-    zip:     "80339",
+    zip:     "80993",
     country: "DE",
   },
   serviceArea: "München und Umgebung – Schwabing, Bogenhausen, Pasing, Sendling u. v. m.",
@@ -81,11 +81,6 @@ export const SERVICES = [
 // Unsplash / Pexels job photos (free to use)
 export const GALLERY_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1733431772808-82d878e59000?w=800&q=80",
-    alt: "Trockenbau und Wandverkleidung – Neubauprojekt in München",
-    width: 800, height: 600,
-  },
-  {
     src: "https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Bodenbelagsarbeiten – Verlegung von Laminatboden",
     width: 800, height: 600,
@@ -106,8 +101,13 @@ export const GALLERY_IMAGES = [
     width: 800, height: 600,
   },
   {
-    src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
-    alt: "Elektroinstallation – fachgerechte Verkabelung",
+    src: "https://images.pexels.com/photos/5767595/pexels-photo-5767595.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Elektroinstallation – moderner Sicherungskasten mit FI-Schutzschaltern",
+    width: 800, height: 600,
+  },
+  {
+    src: "https://images.pexels.com/photos/6474123/pexels-photo-6474123.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Trockenbau – Verspachteln der Deckenanschlüsse",
     width: 800, height: 600,
   },
 ] as const;

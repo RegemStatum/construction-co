@@ -39,12 +39,10 @@ export default function Projects() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
           aria-label="Construction project gallery"
         >
-          {GALLERY_IMAGES.map(({ src, alt, width, height }, i) => (
+          {GALLERY_IMAGES.map(({ src, alt, width, height }) => (
             <li
               key={src}
-              className={`overflow-hidden rounded-sm group relative ${
-                i === 0 ? "sm:col-span-2 lg:col-span-1" : ""
-              }`}
+              className="overflow-hidden rounded-sm group relative"
             >
               <figure className="h-full">
                 <div className="relative overflow-hidden aspect-[4/3] bg-stone-200 hover:cursor-pointer">

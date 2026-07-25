@@ -78,28 +78,6 @@ const INFO_ITEMS = [
     value: SITE.serviceArea,
     href: undefined,
   },
-  {
-    icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 22 22"
-        fill="none"
-        aria-hidden="true"
-      >
-        <circle cx="11" cy="11" r="8" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M11 7v4l3 2"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-    labelKey: "contact.officeHours",
-    value: "Mon – Fri: 7 am – 6 pm\nSat: 8 am – 2 pm",
-    href: undefined,
-  },
 ] as const;
 
 export default function Contact() {
@@ -165,18 +143,6 @@ export default function Contact() {
                 </div>
               ))}
             </dl>
-
-            {/* Address */}
-            <div className="mt-8 p-5 bg-stone-50 rounded-sm border border-stone-200">
-              <p className="font-body font-semibold text-stone-700 text-xs uppercase tracking-wider mb-2">
-                {t("contact.officeAddress")}
-              </p>
-              <address className="not-italic font-body text-stone-600 text-sm leading-relaxed">
-                {SITE.address.street}
-                <br />
-                {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-              </address>
-            </div>
           </aside>
 
           {/* Form column (3 of 5) */}

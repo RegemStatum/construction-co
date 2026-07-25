@@ -41,7 +41,7 @@ export default function ImpressumPage() {
                 <h2 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
                   Vertreten durch
                 </h2>
-                <p>Geschäftsführer: Thomas Berger</p>
+                <p>Inhaber: Igor Nagorniak</p>
               </section>
 
               <section>
@@ -57,56 +57,10 @@ export default function ImpressumPage() {
 
               <section>
                 <h2 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
-                  Registereintrag
-                </h2>
-                <p>
-                  Eintragung im Handelsregister.
-                  <br />
-                  Registergericht: Amtsgericht München
-                  <br />
-                  Registernummer: HRB XXXXXX
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
-                  Umsatzsteuer-ID
-                </h2>
-                <p>
-                  Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
-                  <br />
-                  DE XXXXXXXXX
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
-                  Berufsbezeichnung und berufsrechtliche Regelungen
-                </h2>
-                <p>
-                  Berufsbezeichnung: Handwerksmeister (verliehen in Deutschland)
-                  <br />
-                  Zuständige Kammer: Handwerkskammer für München und Oberbayern
-                  <br />
-                  Es gelten die Vorschriften der Handwerksordnung (HwO), einsehbar unter{" "}
-                  <a
-                    href="https://www.gesetze-im-internet.de/hwo/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-700 hover:text-brand-800 underline"
-                  >
-                    gesetze-im-internet.de/hwo
-                  </a>
-                  .
-                </p>
-              </section>
-
-              <section>
-                <h2 className="font-display text-xl font-bold text-stone-900 uppercase mb-3">
                   Redaktionell verantwortlich
                 </h2>
                 <p>
-                  Thomas Berger
+                  Igor Nagorniak
                   <br />
                   {SITE.address.street}, {SITE.address.zip} {SITE.address.city}
                 </p>
