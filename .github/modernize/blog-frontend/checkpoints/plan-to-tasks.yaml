@@ -1,0 +1,84 @@
+metadata:
+  generated: "2026-10-07"
+  source_plan: ".github/modernize/blog-frontend/plan.md"
+  target_tasks: ".github/modernize/blog-frontend/plan.md (inline task list)"
+
+summary:
+  total_plan_items: 6
+  covered_plan_items: 6
+  missing_plan_items: 0
+  coverage_percentage: 100.0
+  total_tasks_generated: 8
+  orphan_tasks: 0
+
+phases:
+  - phase_id: "Phase-1"
+    phase_name: "Foundational"
+    items:
+      - item_id: "1.1"
+        description: "Align Sanity queries and content rendering."
+        tasks: ["T001", "T002"]
+        notes: ""
+  - phase_id: "Phase-2"
+    phase_name: "US1 — Blog index"
+    items:
+      - item_id: "2.1"
+        description: "Add blog navigation and route labels."
+        tasks: ["T004", "T005"]
+        notes: ""
+      - item_id: "3.1"
+        description: "Build the /blog/ index."
+        tasks: ["T003"]
+        notes: ""
+  - phase_id: "Phase-3"
+    phase_name: "US2 — Article pages"
+    items:
+      - item_id: "4.1"
+        description: "Build individual article pages."
+        tasks: ["T006"]
+        notes: ""
+      - item_id: "5.1"
+        description: "Add blog metadata and sitemap URLs."
+        tasks: ["T007"]
+        notes: ""
+  - phase_id: "Final"
+    phase_name: "Cross-cutting verification"
+    items:
+      - item_id: "6.1"
+        description: "Verify routes and rendering."
+        tasks: ["T008"]
+        notes: ""
+
+missing_plan_items: []
+orphan_tasks: []
+
+upstream_trace:
+  - plan_item: "1.1"
+    source_requirements: ["REQ-001", "REQ-002"]
+    tasks: ["T001", "T002"]
+    full_trace: "REQ-001,REQ-002 → Phase-1.1 → T001,T002"
+  - plan_item: "2.1"
+    source_requirements: ["REQ-003"]
+    tasks: ["T004", "T005"]
+    full_trace: "REQ-003 → Phase-2.1 → T004,T005"
+  - plan_item: "3.1"
+    source_requirements: ["REQ-001"]
+    tasks: ["T003"]
+    full_trace: "REQ-001 → Phase-2.2 → T003"
+  - plan_item: "4.1"
+    source_requirements: ["REQ-002"]
+    tasks: ["T006"]
+    full_trace: "REQ-002 → Phase-3.1 → T006"
+  - plan_item: "5.1"
+    source_requirements: ["REQ-001", "REQ-002"]
+    tasks: ["T007"]
+    full_trace: "REQ-001,REQ-002 → Phase-3.2 → T007"
+  - plan_item: "6.1"
+    source_requirements: ["REQ-001", "REQ-002", "REQ-003"]
+    tasks: ["T008"]
+    full_trace: "REQ-001,REQ-002,REQ-003 → Final.1 → T008"
+
+validation:
+  passed: true
+  errors: []
+  warnings: []

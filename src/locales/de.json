@@ -2,7 +2,20 @@
   "nav": {
     "services": "Leistungen",
     "projects": "Projekte",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "blog": {
+    "eyebrow": "Einblicke & Ratgeber",
+    "title": "Unser Blog",
+    "description": "Tipps, Ideen und Neuigkeiten rund um Renovierung und Handwerk in München.",
+    "emptyTitle": "Noch keine Beiträge",
+    "emptyDescription": "Schauen Sie bald wieder vorbei – neue Beiträge folgen.",
+    "readMore": "Weiterlesen",
+    "backToBlog": "Zurück zum Blog",
+    "by": "Von",
+    "categories": "Kategorien",
+    "untitled": "Ohne Titel"
   },
   "header": {
     "quote": "Kostenloses Angebot",

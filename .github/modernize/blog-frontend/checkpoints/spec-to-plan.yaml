@@ -1,0 +1,59 @@
+metadata:
+  generated: "2026-10-07"
+  source_spec: "User request in chat (no spec file)"
+  target_plan: ".github/modernize/blog-frontend/plan.md"
+
+summary:
+  total_requirements: 3
+  covered_requirements: 3
+  missing_requirements: 0
+  coverage_percentage: 100.0
+
+requirements:
+  - req_id: "REQ-001"
+    req_description: "Browse published posts at /blog/ with summaries and navigation."
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-2"
+      phase_name: "US1 — Blog index"
+      items:
+        - item_id: "1.1"
+          description: "Align Sanity queries to the post schema."
+        - item_id: "3.1"
+          description: "Build the blog index."
+        - item_id: "5.1"
+          description: "Add blog metadata and sitemap URLs."
+    notes: "Responsive cards, derived excerpts, and an empty state."
+  - req_id: "REQ-002"
+    req_description: "Read a post at /blog/[slug]/ and handle unknown slugs."
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-3"
+      phase_name: "US2 — Article pages"
+      items:
+        - item_id: "1.1"
+          description: "Align Sanity queries to the post schema."
+        - item_id: "4.1"
+          description: "Build individual article pages."
+        - item_id: "5.1"
+          description: "Add per-post metadata."
+    notes: "Portable Text body, images, metadata, and 404 behavior."
+  - req_id: "REQ-003"
+    req_description: "Make the blog discoverable in shared navigation in supported UI locales."
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-2"
+      phase_name: "US1 — Blog index"
+      items:
+        - item_id: "2.1"
+          description: "Add blog navigation links and localized labels."
+    notes: "UI labels only; authored post content remains untranslated."
+
+missing_requirements: []
+orphan_plan_items: []
+
+validation:
+  passed: true
+  errors: []
+  warnings:
+    - "No standalone feature spec or constitution file exists; requirements are mapped from the user's request and confirmed scope."

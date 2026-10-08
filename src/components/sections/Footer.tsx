@@ -91,6 +91,14 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/blog/"
+                  className="text-sm hover:text-brand-400 transition-colors"
+                >
+                  {t("nav.blog")}
+                </a>
+              </li>
             </ul>
           </nav>
 

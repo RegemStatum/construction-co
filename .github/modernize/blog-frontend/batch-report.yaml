@@ -1,0 +1,130 @@
+batch_id: "B01"
+completed_tasks: ["T001", "T002", "T003", "T004", "T005", "T006", "T007", "T008"]
+blocked_tasks: []
+files_changed:
+  T001:
+    - file: "src/sanity/lib/queries.ts"
+      change_type: "modified"
+      description: "Align post queries with the Sanity schema and add sitemap query."
+    - file: "src/app/layout.tsx"
+      change_type: "modified"
+      description: "Mount SanityLive."
+  T002:
+    - file: "package.json"
+      change_type: "modified"
+      description: "Add Portable Text renderer and Node test command."
+    - file: "package-lock.json"
+      change_type: "modified"
+      description: "Update dependencies for Portable Text renderer."
+  T003:
+    - file: "src/app/blog/page.tsx"
+      change_type: "created"
+      description: "Add Sanity-backed blog index route and metadata."
+    - file: "src/components/blog/BlogIndexView.tsx"
+      change_type: "created"
+      description: "Add translated responsive index cards and empty state."
+    - file: "src/components/blog/types.ts"
+      change_type: "created"
+      description: "Add blog document types."
+  T004:
+    - file: "src/components/sections/Header.tsx"
+      change_type: "modified"
+      description: "Add desktop and mobile blog navigation."
+    - file: "src/components/sections/Footer.tsx"
+      change_type: "modified"
+      description: "Add blog footer navigation."
+  T005:
+    - file: "src/locales/de.json"
+      change_type: "modified"
+      description: "Add German blog UI strings."
+    - file: "src/locales/en.json"
+      change_type: "modified"
+      description: "Add English blog UI strings."
+    - file: "src/locales/ru.json"
+      change_type: "modified"
+      description: "Add Russian blog UI strings."
+    - file: "src/locales/uk.json"
+      change_type: "modified"
+      description: "Add Ukrainian blog UI strings."
+  T006:
+    - file: "src/app/blog/[slug]/page.tsx"
+      change_type: "created"
+      description: "Add dynamic article route, metadata, and not-found behavior."
+    - file: "src/components/blog/BlogArticleView.tsx"
+      change_type: "created"
+      description: "Render Portable Text, article metadata, and images."
+  T007:
+    - file: "src/app/sitemap.ts"
+      change_type: "modified"
+      description: "Add blog index and post URLs."
+  T008:
+    - file: ".github/modernize/blog-frontend/plan.md"
+      change_type: "modified"
+      description: "Mark implementation plan tasks complete."
+upstream_artifacts_consumed:
+  T001:
+    - artifact: ".github/modernize/blog-frontend/plan.md"
+      used_for: "Sanity query, published content, and live update requirements."
+  T003:
+    - artifact: ".github/modernize/blog-frontend/research.md"
+      used_for: "Existing app routing, post schema, and styling patterns."
+  T006:
+    - artifact: ".github/modernize/blog-frontend/plan.md"
+      used_for: "Article route and Portable Text behavior."
+evidence_mapping:
+  T001:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 1"
+      output: "src/sanity/lib/queries.ts"
+      evidence: "Next.js build and TypeScript check pass."
+  T003:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 3"
+      output: "src/app/blog/page.tsx"
+      evidence: "Browser shows blog title and empty state."
+  T004:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 2"
+      output: "src/components/sections/Header.tsx"
+      evidence: "Mobile menu displays Blog link."
+  T005:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 2"
+      output: "src/locales/de.json, src/locales/en.json, src/locales/ru.json, src/locales/uk.json"
+      evidence: "Locale JSON keys validated."
+  T006:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 4"
+      output: "src/app/blog/[slug]/page.tsx"
+      evidence: "Unknown slug renders Next.js 404; build passes."
+  T007:
+    - upstream: ".github/modernize/blog-frontend/plan.md#Step 5"
+      output: "src/app/sitemap.ts"
+      evidence: "Browser sitemap includes https://raum89.de/blog/."
+traceability:
+  - requirement: "REQ-001"
+    plan_item: "3.1"
+    task: "T003"
+    files: ["src/app/blog/page.tsx", "src/components/blog/BlogIndexView.tsx"]
+    status: "completed"
+  - requirement: "REQ-002"
+    plan_item: "4.1"
+    task: "T006"
+    files: ["src/app/blog/[slug]/page.tsx", "src/components/blog/BlogArticleView.tsx"]
+    status: "completed"
+  - requirement: "REQ-003"
+    plan_item: "2.1"
+    task: "T004"
+    files: ["src/components/sections/Header.tsx", "src/components/sections/Footer.tsx"]
+    status: "completed"
+protocol_violation: false
+errors: []
+warnings:
+  - severity: MEDIUM
+    message: "Add http://localhost:3100 and the deployed origin to the Sanity project's CORS allowlist to enable browser live updates."
+  - severity: LOW
+    message: "The Sanity dataset has no published posts; populated card and article rendering were not end-to-end verified."
+  - severity: LOW
+    message: "npm test passes with zero tests because this repository has no test files."
+test_results:
+  T008:
+    command: "npm run build; npm test; browser route and sitemap smoke checks"
+    passed: 4
+    failed: 0
+    skipped: 0
+    failures: []

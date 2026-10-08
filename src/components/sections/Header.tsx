@@ -95,6 +95,14 @@ export default function Header({ solid = false }: Props) {
             );
           })}
 
+          <a
+            href="/blog/"
+            className="px-4 py-2 rounded-sm font-body font-medium text-sm transition-colors duration-150
+                       text-stone-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+          >
+            {t("nav.blog")}
+          </a>
+
           <LanguageSwitcher id="language-select" label={t("header.language")} />
 
           <a
@@ -146,6 +154,14 @@ export default function Header({ solid = false }: Props) {
                 {t(`nav.${id}`)}
               </a>
             ))}
+            <a
+              href="/blog/"
+              onClick={handleNavClick}
+              className="px-4 py-3 text-stone-200 hover:text-white hover:bg-stone-800
+                         font-body font-medium text-base rounded-sm transition-colors"
+            >
+              {t("nav.blog")}
+            </a>
             <div className="px-4 py-3 bg-stone-900 rounded-sm border border-stone-800">
               <LanguageSwitcher id="language-select-mobile" label={t("header.language")} labelVisible fullWidth />
             </div>

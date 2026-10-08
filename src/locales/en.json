@@ -2,7 +2,20 @@
   "nav": {
     "services": "Services",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "blog": {
+    "eyebrow": "Insights & Advice",
+    "title": "Our Blog",
+    "description": "Tips, ideas, and news about renovation and skilled trades in Munich.",
+    "emptyTitle": "No posts yet",
+    "emptyDescription": "Check back soon for new articles.",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "by": "By",
+    "categories": "Categories",
+    "untitled": "Untitled"
   },
   "header": {
     "quote": "Get a Free Quote",

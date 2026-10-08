@@ -1,0 +1,326 @@
+metadata:
+  generated: "2026-10-07"
+  source_tasks: ".github/modernize/blog-frontend/plan.md"
+  last_updated: "2026-10-07"
+
+summary:
+  total_tasks: 8
+  completed_tasks: 8
+  in_progress_tasks: 0
+  pending_tasks: 0
+  completion_percentage: 100.0
+
+tasks:
+  - task_id: "T001"
+    description: "Align Sanity list/detail queries and connect live query updates."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/sanity/lib/queries.ts"
+          changes:
+            - line_start: 3
+              line_end: 56
+              change_type: "modified"
+              description: "Query schema-defined post fields, Portable Text body, and sitemap slugs."
+        - file: "src/app/layout.tsx"
+          changes:
+            - line_start: 8
+              line_end: 114
+              change_type: "modified"
+              description: "Render SanityLive alongside the existing global providers."
+    verification:
+      build_passed: true
+      test_results:
+        command: "npm run build"
+        passed: 0
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Production build and TypeScript validation passed."
+    upstream_trace:
+      plan_item: "1.1"
+      requirements: ["REQ-001", "REQ-002"]
+      full_trace: "REQ-001,REQ-002 → Step 1.1 → T001 → Sanity queries and root layout"
+  - task_id: "T002"
+    description: "Add Portable Text dependency and a test command."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "package.json"
+          changes:
+            - line_start: 10
+              line_end: 15
+              change_type: "modified"
+              description: "Add @portabletext/react and node --test script."
+        - file: "package-lock.json"
+          changes:
+            - line_start: 1
+              line_end: 1
+              change_type: "modified"
+              description: "Update lockfile for the installed Portable Text renderer."
+    verification:
+      build_passed: true
+      test_results:
+        command: "npm test"
+        passed: 0
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Node test runner exits successfully; the repository has no test files yet."
+    upstream_trace:
+      plan_item: "1.1"
+      requirements: ["REQ-001", "REQ-002"]
+      full_trace: "REQ-001,REQ-002 → Step 1.1 → T002 → package.json and package-lock.json"
+  - task_id: "T003"
+    description: "Build the responsive Sanity-backed blog index."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/app/blog/page.tsx"
+          changes:
+            - line_start: 1
+              line_end: 34
+              change_type: "added"
+              description: "Fetch and render published posts in the blog route."
+        - file: "src/components/blog/BlogIndexView.tsx"
+          changes:
+            - line_start: 1
+              line_end: 112
+              change_type: "added"
+              description: "Render translated responsive post cards and the empty state."
+        - file: "src/components/blog/types.ts"
+          changes:
+            - line_start: 1
+              line_end: 49
+              change_type: "added"
+              description: "Define typed post, category, and image shapes."
+    verification:
+      build_passed: true
+      test_results:
+        command: "Browser smoke check: http://localhost:3100/blog/"
+        passed: 1
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Index and empty-state rendering confirmed; current Sanity dataset has no published posts."
+    upstream_trace:
+      plan_item: "3.1"
+      requirements: ["REQ-001"]
+      full_trace: "REQ-001 → Step 3.1 → T003 → blog index route and view"
+  - task_id: "T004"
+    description: "Add blog links to shared desktop, mobile, and footer navigation."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/components/sections/Header.tsx"
+          changes:
+            - line_start: 96
+              line_end: 169
+              change_type: "modified"
+              description: "Add blog links to desktop and mobile navigation."
+        - file: "src/components/sections/Footer.tsx"
+          changes:
+            - line_start: 84
+              line_end: 107
+              change_type: "modified"
+              description: "Add the blog link to footer navigation."
+    verification:
+      build_passed: true
+      test_results:
+        command: "Browser smoke check: open mobile navigation on /blog/"
+        passed: 1
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Mobile menu exposes the localized Blog link targeting /blog/."
+    upstream_trace:
+      plan_item: "2.1"
+      requirements: ["REQ-003"]
+      full_trace: "REQ-003 → Step 2.1 → T004 → shared header and footer"
+  - task_id: "T005"
+    description: "Add blog UI translations for each supported locale."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/locales/de.json"
+          changes:
+            - line_start: 1
+              line_end: 23
+              change_type: "modified"
+              description: "Add German navigation and blog UI text."
+        - file: "src/locales/en.json"
+          changes:
+            - line_start: 1
+              line_end: 23
+              change_type: "modified"
+              description: "Add English navigation and blog UI text."
+        - file: "src/locales/ru.json"
+          changes:
+            - line_start: 1
+              line_end: 23
+              change_type: "modified"
+              description: "Add Russian navigation and blog UI text."
+        - file: "src/locales/uk.json"
+          changes:
+            - line_start: 1
+              line_end: 23
+              change_type: "modified"
+              description: "Add Ukrainian navigation and blog UI text."
+    verification:
+      build_passed: true
+      test_results:
+        command: "Node JSON locale-key validation"
+        passed: 4
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "All four locale JSON files contain the expected blog labels."
+    upstream_trace:
+      plan_item: "2.1"
+      requirements: ["REQ-003"]
+      full_trace: "REQ-003 → Step 2.1 → T005 → de/en/ru/uk locale resources"
+  - task_id: "T006"
+    description: "Build dynamic article pages with Portable Text, metadata, and 404 handling."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/app/blog/[slug]/page.tsx"
+          changes:
+            - line_start: 1
+              line_end: 75
+              change_type: "added"
+              description: "Fetch published posts by slug, create metadata, and call notFound for missing posts."
+        - file: "src/components/blog/BlogArticleView.tsx"
+          changes:
+            - line_start: 1
+              line_end: 105
+              change_type: "added"
+              description: "Render article metadata, Sanity images, Portable Text, and safe link marks."
+    verification:
+      build_passed: true
+      test_results:
+        command: "Browser smoke check: /blog/not-a-real-post/"
+        passed: 1
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Unknown slugs return the expected 404; no published document was available to test a populated article."
+    upstream_trace:
+      plan_item: "4.1"
+      requirements: ["REQ-002"]
+      full_trace: "REQ-002 → Step 4.1 → T006 → dynamic article route and Portable Text view"
+  - task_id: "T007"
+    description: "Add blog metadata and sitemap URLs."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/app/blog/page.tsx"
+          changes:
+            - line_start: 10
+              line_end: 16
+              change_type: "modified"
+              description: "Set blog index title, description, and canonical URL."
+        - file: "src/app/blog/[slug]/page.tsx"
+          changes:
+            - line_start: 27
+              line_end: 57
+              change_type: "modified"
+              description: "Generate post-specific canonical, Open Graph, and Twitter metadata."
+        - file: "src/app/sitemap.ts"
+          changes:
+            - line_start: 1
+              line_end: 51
+              change_type: "modified"
+              description: "Include blog index and published post routes in sitemap."
+    verification:
+      build_passed: true
+      test_results:
+        command: "Browser smoke check: http://localhost:3100/sitemap.xml"
+        passed: 1
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Sitemap includes the blog index and retains homepage and legal URLs."
+    upstream_trace:
+      plan_item: "5.1"
+      requirements: ["REQ-001", "REQ-002"]
+      full_trace: "REQ-001,REQ-002 → Step 5.1 → T007 → route metadata and sitemap"
+  - task_id: "T008"
+    description: "Verify blog routes and rendering."
+    status: "completed"
+    implementation:
+      files_changed:
+        - file: "src/app/blog/page.tsx"
+          changes:
+            - line_start: 1
+              line_end: 34
+              change_type: "modified"
+              description: "Validated production build and empty-state browser output."
+        - file: "src/app/blog/[slug]/page.tsx"
+          changes:
+            - line_start: 59
+              line_end: 75
+              change_type: "modified"
+              description: "Validated dynamic article route and not-found behavior."
+    verification:
+      build_passed: true
+      test_results:
+        command: "npm run build; npm test; browser route and sitemap smoke checks"
+        passed: 4
+        failed: 0
+        skipped: 0
+        failures: []
+      notes: "Build passes. npm test reports zero test cases because none exist. Content-card and article-body rendering remain unverified until the dataset has a published post."
+    upstream_trace:
+      plan_item: "6.1"
+      requirements: ["REQ-001", "REQ-002", "REQ-003"]
+      full_trace: "REQ-001,REQ-002,REQ-003 → Step 6.1 → T008 → build and browser smoke checks"
+
+pending_tasks: []
+untracked_changes: []
+
+traceability_chain:
+  - chain_id: "TRACE-001"
+    requirement: "REQ-001"
+    plan_phase: "Phase-2"
+    plan_item: "3.1"
+    tasks: ["T001", "T003", "T007", "T008"]
+    files:
+      - "src/sanity/lib/queries.ts"
+      - "src/app/blog/page.tsx"
+      - "src/components/blog/BlogIndexView.tsx"
+      - "src/app/sitemap.ts"
+    status: "complete"
+  - chain_id: "TRACE-002"
+    requirement: "REQ-002"
+    plan_phase: "Phase-3"
+    plan_item: "4.1"
+    tasks: ["T001", "T006", "T007", "T008"]
+    files:
+      - "src/sanity/lib/queries.ts"
+      - "src/app/blog/[slug]/page.tsx"
+      - "src/components/blog/BlogArticleView.tsx"
+      - "src/app/sitemap.ts"
+    status: "complete"
+  - chain_id: "TRACE-003"
+    requirement: "REQ-003"
+    plan_phase: "Phase-2"
+    plan_item: "2.1"
+    tasks: ["T004", "T005", "T008"]
+    files:
+      - "src/components/sections/Header.tsx"
+      - "src/components/sections/Footer.tsx"
+      - "src/locales/de.json"
+      - "src/locales/en.json"
+      - "src/locales/ru.json"
+      - "src/locales/uk.json"
+    status: "complete"
+
+validation:
+  passed: true
+  errors: []
+  warnings:
+    - "SanityLive warns that http://localhost:3100 must be added to the Sanity project's CORS allowlist for live browser updates."
+    - "No published posts are currently available in the configured dataset, so populated listing cards and article Portable Text output could not be exercised."
+    - "npm test currently runs zero tests; build and browser smoke checks were used for validation."
+  blocking_issues: []

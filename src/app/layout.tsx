@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { SITE } from "@/lib/config";
 import I18nProvider from "@/app/I18nProvider";
+import { SanityLive } from "@/sanity/lib/live";
 
 /* ── Metadata ──────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -110,6 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-body antialiased">
         <I18nProvider>{children}</I18nProvider>
+        <SanityLive />
         <Analytics />
         <SpeedInsights />
       </body>
