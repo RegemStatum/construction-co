@@ -17,12 +17,12 @@ export const SITE = {
     country: "DE",
   },
   serviceArea: "München und Umgebung – Schwabing, Bogenhausen, Pasing, Sendling u. v. m.",
-  founded:     2011,
+  founded:     2026,
 
   // Social – leave blank to hide icons
   social: {
-    facebook: "https://facebook.com/raum89",
-    instagram: "https://instagram.com/raum89",
+    facebook: "https://www.facebook.com/profile.php?id=61595496884923",
+    linkedin: "https://www.linkedin.com/in/igor-nagorniak-0b2346425/",
   },
 } as const;
 
@@ -83,31 +83,37 @@ export const GALLERY_IMAGES = [
   {
     src: "https://images.pexels.com/photos/4263067/pexels-photo-4263067.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Bodenbelagsarbeiten – Verlegung von Laminatboden",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
   {
     src: "https://images.unsplash.com/photo-1625646333826-c30c4e4d73d2?w=800&q=80",
     alt: "Fliesenarbeiten – Badsanierung mit hochwertigen Fliesen",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
   {
     src: "https://images.unsplash.com/photo-1761053133165-0f3acdaf1770?w=800&q=80",
     alt: "Parkettverlegung im Fischgrätmuster",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
   {
     src: "https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=800&q=80",
     alt: "Sanitärinstallation – Anschluss und Reparatur",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
   {
     src: "https://images.pexels.com/photos/5767595/pexels-photo-5767595.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Elektroinstallation – moderner Sicherungskasten mit FI-Schutzschaltern",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
   {
     src: "https://images.pexels.com/photos/6474123/pexels-photo-6474123.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Trockenbau – Verspachteln der Deckenanschlüsse",
-    width: 800, height: 600,
+    width: 800,
+    height: 600,
   },
 ] as const;
