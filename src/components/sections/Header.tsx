@@ -22,7 +22,7 @@ export default function Header({ solid = false }: Props) {
 
   /* Active section via IntersectionObserver */
   useEffect(() => {
-    const sections = NAV_LINKS.map((l) => l.href.replace("#", ""));
+    const sections = NAV_LINKS.map((l) => l.href.slice(l.href.indexOf("#") + 1));
     const observers: IntersectionObserver[] = [];
 
     sections.forEach((id) => {
@@ -78,7 +78,7 @@ export default function Header({ solid = false }: Props) {
           aria-label="Main navigation"
         >
           {NAV_LINKS.map(({ id, href }) => {
-            const sectionId = href.replace("#", "");
+            const sectionId = href.slice(href.indexOf("#") + 1);
             return (
               <a
                 key={href}
@@ -106,7 +106,7 @@ export default function Header({ solid = false }: Props) {
           <LanguageSwitcher id="language-select" label={t("header.language")} />
 
           <a
-            href="#contact"
+            href="/#contact"
             className="ml-3 btn-primary !py-2.5 !px-5 !text-sm"
           >
             {t("header.quote")}
@@ -166,7 +166,7 @@ export default function Header({ solid = false }: Props) {
               <LanguageSwitcher id="language-select-mobile" label={t("header.language")} labelVisible fullWidth />
             </div>
             <a
-              href="#contact"
+              href="/#contact"
               onClick={handleNavClick}
               className="btn-primary mt-2 justify-center"
             >

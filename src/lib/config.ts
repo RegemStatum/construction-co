@@ -27,9 +27,9 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { id: "services", href: "#services" },
-  { id: "projects", href: "#projects" },
-  { id: "contact", href: "#contact" },
+  { id: "services", href: "/#services" },
+  { id: "projects", href: "/#projects" },
+  { id: "contact", href: "/#contact" },
 ] as const;
 
 export const STATS = [

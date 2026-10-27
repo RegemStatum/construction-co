@@ -113,7 +113,7 @@ export default function Footer() {
               {SERVICES.map(({ id, titleKey }) => (
                 <li key={id}>
                   <a
-                    href="#services"
+                    href="/#services"
                     className="text-sm hover:text-brand-400 transition-colors"
                   >
                     {t(titleKey)}
